@@ -296,30 +296,66 @@
                     
              
 
+              12. Introduction to TypeCasting
 
-                  
-                     
+                       print(1 + 2.0) ==> here python automotically type cast and gives the output in the form of float 3.0
+
+                       1. Implicit TypeCasting (automatic changes)
+                       2. Explicit TypeCasting 
+
+              13. Implicit Type Casting [python itself converted internally]
+
+                          int, float, boolean 
+                          
+                          int with float 
+                          print(1 + 2.0) ==> 3.0 (here first number 1 gets converted into 1.0)
+
+                          int with bool [True as 1 and False as 0 (int)]
+                          print(5 + True) ==> 6  (5 + 1)
+                          print(5 + False) ==> 5 (5 + 0)
+                          print(5 - True) ==> 4 (5 - 4)
+                          print(5 - False) ==> 5 (5 - 0)
+
+                          float with bool [True as 1.0 and False as 0.0 (float)]
+                          print(5.0 + True) ==> 6.0 (5.0 + 1.0)
+                          print(5.0 + False) ==> 5.0 (5.0 + 0.0)
+
+              14. Explicit Type Casting  [we need to convert / change forcefully ]
+
+                          To convert Forecefully into the 
+
+                              int ==> we use int()
+                              float ==> float()
+                              bool ==> bool()
+
+                         Examples : 
+
+                               print(1 + int(2.0)) ==> 3 (1 + 2)
+                               print(float(1)+2.0) ==> 3.0 (1.0 + 2.0)
 
 
-                    
+               15. TypeCasting in String datatype 
+
+                           a = 'M'
+                           b = 'U'
+
+                           print(a + b) ==> MU 
+
+                           print('hello' + 1) ==> Error 
+
+                           print("hello" + "Mutyam") ==> helloMutyam 
+
+                           print("hello" + str(True)) ==> helloTrue 
+
+                           print('Mutyam' + str(123)) ==> Mutyam123
 
 
-                    
 
+               16. TypeCasting in boolean data type
 
-
-                        
-
-
-
-                     
-
-
-
-
-
-                              
-
+                           print(bool(1)) ==> True 
+                           print(bool(-50)) ==> True
+                           print(bool(0)) ==> False 
 
 
             </code>
