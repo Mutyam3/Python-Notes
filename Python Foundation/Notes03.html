@@ -105,27 +105,91 @@
                           hello 
                           hi 
 
-                    8. 
+                    8. Raw Strings 
+                    ------------------ 
+
+                            print('hello/nhi') ==> hello 
+                                                   hi 
+                            x = 'D:\Python Notes\Python-Notes\2.Python Foundation'
+
+                            print(x) ==> D:\Python Notes\Python-Notes(icon).Python Foundation
+
+                            y = 'E:\Edupoly\Python\new-year-file'
+
+                            print(y) ==>  E:\Edupoly\Python
+                                          ew-year-file 
+                                       
+                                here, python recognises blackslash n which makes to print the text in next line 
+                            
+                            print('\3') ==> heart shape 
+                            print('\4') ==> some other shape 
+
+                             with this we have problems so we need to fix it by using raw strings 
+
+                       by using r infront of the string 
+
+                          print(r'hello\nhi') ==> it prints as whole string ==> hello\nhi
+                          print(r'D:\Python Notes\Python-Notes\2.Python Foundation')
+                          print(r'E:\Edupoly\Python\new-year-file')
+
+                           The above statements gives the output as a string respectively 
+                           so by using r string python treats as a string 
+
+                    9. input() statement for taking user input
+                    --------------------------------------------- 
+
+                          input('what is your name ?') 
+
+                          x = input('what is your name ?')
+                          print(x)
+                          print(type(x))
+
+                        output : 
+
+                               what is your name ? Mutyam 
+
+                               Mutyam 
+
+                               < class 'str' > 
+
+                        Note : whatever we enter in the input it gets converted into a string 
+
+                            x = input('what is your age ?')
+                            print(x) 
+                            print(type(x))
+
+                        output : 
+
+                                what is your age ? 10
+                                10
+                                < class 'str' > 
 
 
+                    10. Type casting user input values
+                    --------------------------------------- 
 
 
+                    We can convert the str into int if you want the age to be int by using explicit typecasting
+                    
+                        x = int(input('what is your age ?'))
+                        print(x)
+                        print(type(x))
 
+                       output : 
 
+                              what is your age ? 20 
+                              20 
+                              < class 'int' >
 
+                        x = float(input('what is the price of an item ? '))
+                        print(x) 
+                        print(type(x)) 
 
+                        output : 
 
-
-                     
-
-
-
-
-
-
-
-
-
+                                what is the price of an item ? 23.67 
+                                23.67
+                                < class 'float' > 
 
             </code>
         </pre>
