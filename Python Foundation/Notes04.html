@@ -30,10 +30,143 @@
 
 
              1. Introduction to flow charts 
+             ---------------------------------
+             
+                    ==> 
+
+             2. Different flow chart elements 
              --------------------------------- 
+
+                    ==> Oval shape        ==> used for start / end 
+                    ==> Rectangle         ==> used for statement 
+                    ==> Parallelogram     ==> used for input / output 
+                    ==> Rhombus           ==> used for decision / condition 
+
+             3. Using flow charts to build program flow and logic 
+             ------------------------------------------------------ 
+
+                 Problem Statement :  Enter the birth of a person and print the age.  
+
+                                 start
+
+                                   ||
+                                   \/ 
+
+                            y = Enter Birth year
+
+                                   ||
+                                   \/
+
+                             x = 2024 - y 
+                                   
+                                   ||
+                                   \/ 
+
+                                 print(x)
+
+                                   || 
+                                   \/ 
+
+                                  stop 
+
+                    year =  int(input('Enter your year of birth ? '))
+
+                    x = 2025 - year 
+
+                    print(x)
+
+                    output : 
+                             Enter your year of birth ? 1998 
+                             27
+
+             4. Conditions or boolean expressions
+
+                        x = 4 < 5
+
+                        here 4 < 5  is a boolean expression 
+
+                boolean expression is also called as condition 
+
+
+                Problem Statement : Enter the birth year of a person and if the birth year is more than 1999 print 
+                                    "you are born in the 21st century"
+
+                              start 
+                               || 
+                               \/ 
+
+                            y = enter birth year
+
+                                || 
+                                \/ 
+
+                            more than 1999 
+                yes          ( y > 1999 )       no 
+
+                ||
+                \/
+
+                  print('You are born in the 21st century')
+
+                          
+                   CODE : 
+                   -----
+                          x =  int(input('enter your birth year'))
+
+                          if x > 1999: 
+                            print('you are born in the 21st century')
+
+
+                                   
+
+                Problem Statement :  Enter the birth of a person and print 'adult' if the age is more than or equal to 18, 
+                                     print 'minor' if the age is less than 18 
 
                      
 
+                                    start 
+                                     || 
+                                     \/ 
+      
+                                  y = enter birth year
+      
+                                      || 
+                                      \/
+                                      
+                                  age = 2025 - y 
+      
+                                       ||
+                                       \/ 
+
+                                  more than or equal to 18  
+                      yes          ( age >= 18 )           no 
+      
+                      ||                                   ||
+                      \/                                   \/ 
+      
+                        print('adult')                       print('minor')
+                                  
+                           ==>             stop         <== 
+                           
+
+                    CODE : 
+                    -----
+
+                                  y =  int(input('Enter your birth year '))
+
+                                  age = 2025 - y 
+                                  
+                                  if age >= 18:
+                                     print("adult") 
+                                  else:
+                                     print('Minor') 
+
+
+
+                            
+
+                                    
+                   
 
             </code>
         </pre>
