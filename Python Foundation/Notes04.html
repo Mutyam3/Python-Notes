@@ -162,6 +162,109 @@
                                      print('Minor') 
 
 
+             7. Control flow techniques in Python 
+             ------------------------------------------- 
+
+                        x = 10 
+                        y = 20
+
+                        print(x + y)
+                        print('hi')
+
+                        The techniques which helps us to control the execution/ flow of the execution of the code 
+                        These control flow techniques are there in any programming language 
+                                 The control flow techniques are : 
+
+                                           if statement 
+                                           else statement 
+                                           elif statement
+                                           match case 
+                                           pass statement 
+                                           
+             10.elif statement : 
+               ---------------- 
+                                   #  >18  ==> A  
+                                   #  60-80 ==> B
+                                   #  40-60 ==> C 
+                                   #  30-40 ==> D 
+                                   #  < 30 ==> F 
+
+                          marks = int(input('Enter your marks :'))
+
+                          if marks > 80: 
+                               print('A')
+                          else: 
+                            if marks > 60 and marks <=80: 
+                                   print('B') 
+                        
+                            In python multiple elseif is not possible , so they compile and give a elif 
+
+                            if marks > 80: 
+                               print('A')
+                            elif marks > 60 and marks <=80: 
+                               print('B') 
+                            elif marks > 40 and marks <=60: 
+                               print('C')
+                            elif marks >30 and marks <=40: 
+                               print('D') 
+                            elif marks < 30:    
+                               print('F')
+
+                               here instead of last elif, we can use else directly 
+
+                            Output : 
+
+                            Enter your marks : 50
+                                     C 
+
+             11. match case : 
+                 -------------- 
+
+                    Just for the syntax instead of writing multiple elif statements 
+                    In python less use of this match case 
+                    In this match case we don't have break statement 
+                            
+                            color = input('Enter your color : ')
+
+                                match color: 
+                                    case 'red' : 
+                                        print('red')
+                                    case 'blue' : 
+                                        print('blue')
+                                    case 'yellow' : 
+                                        print('yellow')
+                                    case 'green' : 
+                                        print('green')
+                                    case _:             ====> default case 
+                                         print('invalid color')
+             12. pass statement : 
+                ----------------- 
+
+                  Pass statement means Do Nothing 
+                             
+                     if 2 < 3   
+                        
+              
+
+                        
+              
+                                       
+
+                    
+
+
+
+
+
+
+
+                    
+
+                                 
+
+              
+
+
             </code>
         </pre>
     </body>
