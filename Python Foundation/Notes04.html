@@ -242,25 +242,114 @@
 
                   Pass statement means Do Nothing 
                              
-                     if 2 < 3   
-                        
-              
+                     if 2 < 3: 
+                         pass 
+                         
+                     print('hi')
+
+
+             13. Introduction to loops  : 
+                --------------------------- 
+                
+                              print('Mutyam')
+                              print('Mutyam')
+                              print('Mutyam')
+
+                        -3
+                        -2 
+                        -1
+                         0
+                         1
+                         2
+                         3
+                         4
+
+                ==> In loops also there is a condition to check and print the number of times according to that condition 
+
+             14. Initialization,condition and updation in loops : 
+                 ------------------------------------------------- 
+
+                          x = 20  ==> initialization
+
+                          while x < 24:     ==> condition
+                               print('hi') 
+
+                     
+                      Execution of code in steps : 
+
+                           x = 20
+                           20 < 24 --> True
+                           hi 
+                           x < 24 -->  True  (20 < 24)
+                           hi 
+                           x < 24 --> True (20 < 24) 
+                           hi 
+                           . 
+                           . 
+                           . 
+                           . 
+                           infinity times as our condition is always true as x = 20 its not updating  
+
+                    x = 20   ==> Initialization
+
+                    while x < 24:  ===>  Condition 
+                        x = x + 1  ===>  Updation 
+                        print('hi') 
+
+                    but here by placing the updation statement next to the condition, the first x value won't get the hi 
+                      i.e 
+
+                         
+                        20 
+                        21 --> hi 
+                        22 --> hi 
+                        23 --> hi 
+                        24 --> hi 
+
+
+                    Correct code : 
+
+                                       x = 20 ==> Initialization 
+
+                                       while x < 24:  ==> Condition (Where to stop)
+                                           print('hi') 
+                                           x = x + 1  ==> Updation
+
+                        Execution steps : 
+                        ------------------- 
+
+                            x = 20 
+                             20 < 24 --> True
+                                  hi 
+                             x = 20 + 1  = 21 
+                             21 < 24 --> True 
+                                   hi 
+                             x = 21 + 1 = 22 
+                             22 < 24 --> True 
+                                   hi 
+                             x = 22 + 1 = 23 
+                             23 < 24 --> True 
+                                   hi 
+                             x = 23 + 1 = 24 
+                             24 < 24 --> False
+
+                      Ex : 2 : 
+
+                                x = -4   ==> Initialization
+                                
+                                while x <= 0:   ==> Condition (where to stop)
+                                    print('hi')
+                                    x = x + 1   ==> Updation 
+
+
+
+
+
+
 
                         
-              
-                                       
-
-                    
 
 
-
-
-
-
-
-                    
-
-                                 
 
               
 
