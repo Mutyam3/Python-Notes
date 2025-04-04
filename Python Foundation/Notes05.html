@@ -8,7 +8,425 @@
     <body>
         <pre>
             <code>
-                ***
+
+                **** Sequence Data Types : 
+
+                             ==> 1. Strings 
+                             ==> 2. Lists 
+                             ==> 3. Tuples 
+
+
+                ***  7.Sequence data types Part 1 - Strings
+
+                => 1. Text values or strings
+                => 2. Creating a string using string literals
+                => 3. Creating a string by explicit typecasting
+                => 4. String concatenation using ‘+’ operator
+                => 5. Formatted strings or f-strings
+                => 6. String repetition using ‘*’ operator
+                => 7. Indexing in strings
+                => 8. Accessing individual characters using indexing
+                => 9. Positive and negative index
+                => 10. IndexError
+                => 11. Immutability
+                => 12. Membership testing
+                => 13. The len() function
+                => 14. String slicing
+                => 15. Copying strings using string slicing
+                => 16. Looping in strings
+                => 17. String methods
+                => 18. Interview coding problems on string iteration
+
+
+                1. Text Values or Strings : 
+                   ------------------------ 
+
+                   X = "Hello"
+
+                   y = "b"
+
+                   z = ""
+
+                   a = " "
+
+                   t = "3.14"
+
+                   b = "Welcome to Python"
+
+                    # multiline comment 
+
+                   """ We will learn strings today 
+                      print('Hi')
+                      print('Hello') """    //Multiline comment or doc string
+
+                2. Creating a String using string literals: 
+                   ----------------------------------------
+
+                   by using varaible i.e value as string stored in a variable 
+
+                   x = "Hi"
+
+
+                3. Creating a String by Explicit Typecasting: 
+                   -----------------------------------------
+
+                   num = 45
+                   y = str(num)
+                   print(y) // "45"
+                   print(type(num)) // String  
+
+                4. String Concatenation using "+" Operator : 
+                   ---------------------------------------
+
+                   x = "Mutyam"
+                   y = "Bhargav"
+
+                   z = x + y  // This '+' will decide if the both values are numbers then it add 
+                                 if the both values are strings then it will concatenate 
+                   print(z) // MutyamBhargav
+
+                   print("Mutyam" + "Bhargav") // MutyamBhargav
+                   print("Mutyam""Bhargav") // MutyamBhargav 
+
+                   x = "100"
+                   y = 6 
+                   z = x + y 
+                   print(z)
+
+                   Type Error : can only concatenate str (not "int") to str 
+                   if one of the value is not str then it won't conactenate 
+
+                   x = "120"
+                   y = "150"
+                   z = x + y 
+                   print(z) // 120150 
+
+                5. Formatted strings or f-strings : 
+                   -------------------------------- 
+
+                   name = "Mutyam"
+                   city = "Hyderabad"
+
+                   print(f"{name} lives in {city}") // Mutyam is lives in Hyderabad 
+
+                6. String repetition using ‘*’ operator: 
+                   ------------------------------------- 
+
+                   name = "Mutyam"
+                   print(name*3) // MutyamMutyamMutyam 
+
+                   print("ba" + "na"*2) // banana 
+
+                7. Indexing in strings : 
+                   --------------------- 
+
+                    g = "Mutyam"
+
+                    print(g[0]) //M 
+                    print(g[1]) //u 
+                    print(g[2]) //t 
+                    print(g[3]) //y 
+                    print(g[4]) //a 
+                    print(g[5]) //m 
+
+                    print(g[6]) // String index out of range
+                    
+                    print(g[-1]) //m 
+                    print(g[-2]) //a 
+                    print(g[-3]) //y 
+                    print(g[-4]) //t 
+                    print(g[-5]) //u 
+                    print(g[-6]) //M 
+
+                    print(g[-7]) // String index out of range 
+
+                8.  Accessing Individual Characters using Indexing  : 
+                    ----------------------------------------------- 
+
+                      g = "Mutyam"
+                      g[0] = "B"  
+                      print(g) // 'str' object does not support item assignment 
+
+                      u can't change the string directly by assignment as strings are immutable 
+                      if u want to change u can assign new string with changes to the same variable 
+
+                      g = "Butyam"
+                      print(g) // Butyam
+
+                9.  Positive and negative index : 
+                    ----------------------------
+
+                    g = "Mutyam"
+
+                    print(g[0]) //M 
+                    print(g[1]) //u 
+                    print(g[2]) //t 
+                    print(g[3]) //y 
+                    print(g[4]) //a 
+                    print(g[5]) //m 
+
+                    print(g[6]) // String index out of range
+                    
+                    print(g[-1]) //m 
+                    print(g[-2]) //a 
+                    print(g[-3]) //y 
+                    print(g[-4]) //t 
+                    print(g[-5]) //u 
+                    print(g[-6]) //M 
+
+                    print(g[-7]) // String index out of range
+
+                10.IndexError : 
+                   ------------ 
+
+                   g = "Mutyam"
+
+                   print(g[0]) //M 
+                   print(g[1]) //u 
+                   print(g[2]) //t 
+                   print(g[3]) //y 
+                   print(g[4]) //a 
+                   print(g[5]) //m 
+
+                   print(g[6]) // String index out of range
+                   
+                   print(g[-1]) //m 
+                   print(g[-2]) //a 
+                   print(g[-3]) //y 
+                   print(g[-4]) //t 
+                   print(g[-5]) //u 
+                   print(g[-6]) //M 
+
+                   print(g[-7]) // String index out of range
+
+                11. Immutability : 
+                   ---------------- 
+
+                   g = "Mutyam"
+                   g[0] = "B"  
+                   print(g) // 'str' object does not support item assignment 
+
+
+                12. Membership testing : 
+                    --------------------- 
+
+                    name = "MutyaM" 
+
+                    print("M" in name) // True 
+
+                    print("j" in name) // False 
+
+                    print("m" in name) // False 
+
+                    print("Mut" in name) // True 
+
+                13. The len() function : 
+                    ---------------------- 
+
+                     city = "Hyderabad"
+
+                     print(len(city)) //9 
+
+                     0 to len(city)-1 as per indexing 
+
+                14. String Slicing :
+                    ------------------- 
+
+                     city = "Hyderabad"
+
+                     x = city[0:3]    or city[:3]
+
+                     print(x) // Hyd 
+
+                     x = city[2:10] 
+
+                     print(x) // derabad 
+
+                     x = city[2:]
+
+                     print(x) //derabad 
+
+                     x = city[:]
+
+                     print(x) // Hyderabad 
+
+                     x = city[-4 : -1]
+
+                     print(x) // aba
+
+                15. Copying Strings using string Slicing : 
+                    -------------------------------------- 
+
+                    city = "Hyderabad"
+
+                    x = city[:]
+
+                    print(x) // Hyderabad 
+
+                16. Looping in Strings :
+                    -------------------- 
+
+                    we can use both while and for loops for looping in strings 
+
+                    while loop : 
+                    ------------ 
+
+                    a = "Hello"
+
+                    i = 0 
+
+                    while i<= len(a)-1:   or i < len(a)
+                          print(a[i])
+                          i = i + 1 
+
+                    output : 
+                    -------- 
+
+                    H 
+                    e 
+                    l 
+                    l 
+                    o 
+
+                    for loop : 
+                    ----------- 
+
+                    a = "Hello"
+
+                    for i in a: 
+                        print(i)
+
+                    here i has direct characters not index 
+                    when we working with sequence data types like lists | tuples | strings , we use for loop because its easy
+
+                ==> Problems on Strings : 
+                    ---------------------- 
+
+                  ==> Search all occurrences of a character in a string 
+
+                    s = "Apple" 
+
+                    i = 0
+
+                    while i < len(s):
+                         if s[i] == 'p' :
+                            print(i)
+                         i = i + 1 
+
+                    Output : 
+                    ---------
+                    1 
+                    2 
+
+                  ==> Count Occurences of a character in a string 
+
+                     s = "Apple" 
+
+                     i = 0 
+                     count = 0
+
+                     while i < len(s) : 
+                           if s[i] == 'p':
+                              count = count + 1
+                           i = i + 1 
+
+                    output : 
+                    -------- 
+                    2 
+
+                  ==> Delete all Occurrence of a character in a string 
+
+                       s = "MutyaM"
+
+                       new = ""
+
+                       i = 0
+                       
+                       while i < len(s): 
+                           if s[i] != 'M'
+                              new = new + s[i] 
+                         i = i + 1 
+
+                      print(new) // utya
+                      
+                  
+                  ==> Remove First Occurrence of a character in a string 
+
+                        s = MutyaM 
+
+                        new = ""
+
+                        i = 0 
+                        count = 0
+
+                        while i < len(s):
+                             if s[i] == 'M':
+                                count = count + 1 
+                             if (s[i] == 'M' and count > 1) or (s[i] != 'M') :
+                                 new = new + s[i]
+
+                        i = i + 1 
+
+                        print(new) // utyaM
+
+                        
+
+                               
+
+                     
+
+
+                
+                    
+                    
+
+
+
+
+
+
+
+                    
+
+                        
+
+
+                
+
+
+
+
+
+
+
+                      
+
+
+
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
             </code>
         </pre>
     </body>
