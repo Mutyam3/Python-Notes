@@ -34,6 +34,399 @@
 
                 ==> 1. Introduction to Lists : 
                     -------------------------- 
+                           An Ordered, mutable collection of items 
+                           allowing duplicates 
+                           items can be of different data types 
+                           enclosed with square brackets
+
+                ==> 2. Homogenous and heterogenous lists : 
+                    ---------------------------------
+                      # Homogenous list as same datatype is storing in a list 
+
+                      nums = [1,4,5,7,2]
+                      names = ["raju", "mutyam", "Bhargav", "Reddy"]
+
+                      # Heterogenous list 
+
+                      li = [12,34,46, "Mutyam", True]
+
+                ==> 3. Creating a list using list literals : 
+                    -----------------------------------------
+
+                       num = [1,5,2,8,9]
+
+                
+                ==> 4. Creating a list by explicit typecasting : 
+                     ------------------------------------------- 
+
+                      h = list((2,3,6))
+                      print(h) // [2,3,6]  // converted tuple into list as explicitly using list()
+
+                ==> 5. Indexing in lists : 
+                    ----------------------- 
+
+                      nums = [1, 4, 5, 2, 7]
+                              0  1  2  3  4 
+                             -5 -4 -3 -2 -1
+
+                     
+
+
+                 => 6. Accessing individual characters using indexing : 
+                    --------------------------------------------------- 
+
+                    nums = [1, 4, 5, 2, 7]
+
+                    print(nums[4]) // 7
+                    print(len(nums)) // 5 
+
+                    0 to len()-1 ==> indexing 
+
+                    print(nums[-1]) // 7 
+                    print(nums[-5]) // 1 
+
+                    nums[2] = 45 
+                    print(nums)  // [1, 4 , 45, 2 , 7]
+
+                    nums[-1] = 50 
+                    print(nums) // [1,4,45,2,50]
+
+                => 7. Positive and negative index : 
+                   --------------------------------- 
+
+                   nums = [1, 4, 5, 2, 7]
+
+                   print(nums[-1]) // 7 
+                   print(nums[-5]) // 1 
+
+                   nums[2] = 45 
+                   print(nums)  // [1, 4 , 45, 2 , 7]
+
+                   nums[-1] = 50 
+                   print(nums) // [1,4,45,2,50]
+
+                => 8. IndexError : 
+                    -------------- 
+
+                    nums = [1,4,5,2,7]
+
+                    print(nums[5]) // list index out of range 
+                    print(nums[-6]) // list index out of range
+
+                ==> 9. Membership testing : 
+                    ------------------------ 
+
+                    nums = [ 1, 4 , 5 , 2 , 8 ]
+
+                    print(5 in nums) // True 
+                    print(7 in nums) // False 
+
+                ==> 10. The len() function : 
+                     ------------------------ 
+
+                     nums = [ 1, 4, 5, 2, 8] 
+
+                     print(len(nums)) // 5 
+
+                ==> 11. Modifying values using index : 
+                     ---------------------------------- 
+
+                     nums = [1, 4, 5 , 2 , 8]
+
+                     nums[4] = 40 
+                     print(nums) // [1, 4, 5, 2, 40]
+
+                     nums[-2] = 30 
+                     print(nums) // [1, 4, 5, 30, 40]
+
+                ==> 12. Concatenation in lists : 
+                     ---------------------------- 
+
+                     num1 = [1,2,3,5]
+                     num2 = [2,5,8,7]
+
+                     print(num1 + num2) // [1,2,3,5,2,5,8,7]
+
+                ==>  13. List slicing : 
+                     ------------------ 
+
+                     nums = [1,4,5,2,7]
+
+                     print(nums[0:2]) // [1,4]
+                     print(nums[2,4]) // [5,2]
+
+                     print(nums[:3]) // [1,4,5]
+                     
+                     print(nums[-4: -1]) // [4,5,2]
+
+                     print(nums[:]) // [1,4,5,2,7]  # Copying list
+
+                     
+                     names = ["Mutyam", "Bhargav", "Reddy"]
+
+                     print(names[:2]) // ["Mutyam", "Bhargav"]
+
+                ==> 14. Nested lists : 
+                    ------------------ 
+
+                    numbers = [[1,2], [3,4], [5,6]]
+
+                    print(numbers[1]) // [3,4]
+
+                    print(numbers[1][0]) //3
+                    print(numbers[1][1]) //4 
+                    print(numbers[0][1]) //2 
+                    print(numbers[0][0]) //1
+
+                    print(numbers[2][2]) // list index out of range 
+
+
+
+                ==> 15. Looping in Lists: 
+                     -------------------- 
+
+                    nums = [23,12, 67, 44, 89, 90, 36]
+
+                    i = 0 
+
+                    while i <= len(nums)-1 
+                        print(nums[i])
+                        i = i + 1 
+
+                    output : 23
+                             12 
+                             67
+                             44
+                             89
+                             90
+                             36 
+
+                For loop : problem with for loop is it doesnot have indexing 
+
+                    for num in nums : 
+                          print(num)  // 23 
+                                         12
+                                         67
+                                         44
+                                         89
+                                         90
+                                         36 
+
+                
+                    
+                ==> 16. The enumerate() function : 
+                     ----------------------------- 
+
+                     enumerate() is function 
+                     with enumerate() function we can access both index and value 
+
+                     nums = [12 , 10 , 50, 25, 60 , 45]
+
+                     for x in enumerate(nums):
+                           print(x)  
+
+                    output : 
+
+                            (0, 12)
+                            (1, 10)
+                            (2, 50)
+                            (3, 25)
+                            (4, 60)
+                            (5, 45)
+
+                      for (i,v) in enumerate(nums): 
+                                print(v)
+
+                        output:  12
+                                 10 
+                                 50
+                                 25
+                                 60
+                                 45 
+
+                ==> 17. List methods : 
+                    ------------------- 
+
+                         nums = [23, 12, 67, 44, 89, 90, 36]
+
+                         list methods : 
+
+                          1. append() :    add a value at the end 
+                            ----------   takes only one argument at the end 
+
+                                nums.append(99)
+                                print(nums) // [23, 12, 67, 44, 89, 90, 36, 99] 
+
+                                nums.append(99, 50)
+                                print(nums) // error 
+
+                          2. insert() :     add a value at specific index 
+                             ---------    first argument is index and second argument is a value
+                                          it won't remove any value 
+
+                                  nums.insert(3, 10) 
+                                  print(nums) // [23, 12, 67, 10, 44, 89, 90, 36]
+                                  nums.insert(0,32) 
+                                  print(nums) // [32,23, 12,67,10,44,89,90,36]
+
+                          3. remove() :    it remove an element / item from a list 
+                             ---------   finding and remove anywhere 
+
+                                   nums.remove(90)
+                                   print(nums)  // [23,12,67,44,89,36]
+
+                          4. pop() :      remove last element or value 
+                            ------      given index as an argument it gets removed that index value  
+
+
+                                    nums.pop()
+                                    print(nums) // [23,12,67,44,89,90]
+
+                                    nums.pop(1)
+                                    print(nums) //[23, 67, 44, 89, 90]
+
+                          5. Count() : 
+                             -------      helps to count the values how many times it coming  
+
+                                     nums = [12, 55, 90, 57, 44, 25, 66, 44]
+
+                                     x = nums.count(44)
+                                     print(x) // 2 
+
+                                     y = nums.count(90)
+                                     print(y) // 1 
+
+                           6. clear() : 
+                             ---------   it clears the whole list and make it as empty list 
+
+                                         nums.clear()
+                                         print(nums) // []
+
+                           7. sort(): 
+                              --------    sort method makes the items in list to be in ascending order 
+
+                                        nums = [20, 4, 5, 12, 10, 80, 15, 35]
+
+                                        nums.sort()
+                                        print(nums) // [4,5,10,12,15,35,80]
+
+                            8. reverse() : 
+                               -----------   arrange the items from last index to first index as reverse 
+
+                                        nums = [20, 4, 5, 12, 10, 80, 15, 35] 
+
+                                        nums.reverse()
+                                        print(nums) // [35, 15, 80, 10, 12, 5, 4, 20]
+
+                                to arrange the items in descending order we can use sort() and reverse() methods 
+                                as sort() method arrange the items in ascending order and reverse() method arrange the items in reverse direction 
+
+                                        nums.sort()
+                                        nums.reverse()
+
+                                        print(nums) // [80, 35, 15, 12, 10, 5, 4]
+
+                
+                 => 20. Interview coding problems on list iteration : 
+                    -------------------------------------------------- 
+
+                      1. For the given array [23, 34, 54, 0, 4, 7] print all the array values using a for loop. Expected output : 23 34 54 0 4 7
+
+                      Sol :             using for loop : 
+
+                                         nums =  [23, 34, 54, 0, 4, 7]
+
+                                         for num in nums : 
+                                              print(num)
+
+                                        Output :  23
+                                                  34 
+                                                  54 
+                                                  0
+                                                  4
+                                                  7 
+
+                       2. Print all numbers in an array except the first element. Expected Output : 34 54 0 4 7 
+
+                                        nums =  [23, 34, 54, 0, 4, 7]
+
+                                        nums =  [23, 34, 54, 0, 4, 7]
+
+                                        for (i,v) in enumerate(nums):
+                                              if i != 0: 
+                                               print(v)
+
+                                               or 
+
+                                        i = 1
+
+                                        while i < len(nums):
+                                            print(nums[i])
+                                         i= i + 1 
+
+                                    
+
+
+                        3. Print all elements in an array except the last element  
+
+                                      nums = [23, 34, 54, 0, 4, 7]
+
+                                      
+
+                                            
+
+                                       
+                                           
+
+                                                                                                                            
+
+
+
+
+                                 
+
+
+
+                      
+
+
+                    
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       
+
+
+
+
+
+
                 
             </code>
         </pre>
