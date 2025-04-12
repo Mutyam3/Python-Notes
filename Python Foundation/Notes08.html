@@ -31,13 +31,252 @@
                 => 15. List of dictionaries
                 => 16. Interview coding problems on list of dictionaries 
 
-                1. Introduction to Dictionaries : 
+            ==>   1. Introduction to Dictionaries : 
                    ------------------------------- 
+                   Dictionaries contains key value pairs value can be of any time but key must have string 
+                   An unordered collection of key-value pairs. 
+                   Keys must be unique and immutable (eg : strings, numbers, tuples), 
+                   while values can be of any datatype. 
 
+                    Ex : {"name"  : 'Mutyam', "age" : 20}
+                         {"fruit" : 'Apple', "count" : 12}
 
-                2. Creating dictionaries using literals : 
+                        
+
+            ==>   2. Creating dictionaries using literals : 
                     -------------------------------------
+
+                    person = {"firstname" : "Bhargav",
+                              "lastname"  : "Mutyam"
+                              "age" : 18, 
+                              "address" : "Hyderabad", 
+                              "language" : "English", 
+                              "registered" : True}
+
+                    key is firstname 
+                    value is Bhargav 
+
+            ==> 3. Creating dictionaries using dict() function : 
+                   --------------------------------------------- 
+
+                   // using list and tuples 
+
+                     x = [ ("firstname", "Bhargav"),
+                           ("lastname", "Mutyam"),
+                           ("age", 18),
+                           ("address", "Hyderabad"),
+                           ("langauge", "English")
+                         ]
+
+                    print(dict(x)) // {"firstname" : "Bhargav",
+                                      "lastname"  : "Mutyam"
+                                      "age" : 18, 
+                                      "address" : "Hyderabad", 
+                                      "language" : "English", 
+                                      "registered" : True}
+
+                      or 
+
+                      f = dict(firstname = "Bhargav", lastname = "Mutyam", age = 30, address = "Hyderabad", language = "English")
+
+                      print(f) // {"firstname" : "Bhargav",
+                                    "lastname"  : "Mutyam"
+                                    "age" : 18, 
+                                    "address" : "Hyderabad", 
+                                    "language" : "English", 
+                                    "registered" : True
+                                   }
+
+            ==> 4.Keys and values in dictionaries : 
+                  --------------------------------- 
+
+                  person = {"firstname" : "Bhargav",
+                              "lastname"  : "Mutyam"
+                              "age" : 18, 
+                              "address" : "Hyderabad", 
+                              "language" : "English", 
+                              "isRegistered" : True
+                            }
+
+                    key is firstname 
+                    value is Bhargav 
+
+                    Note : key should be in string but value can be of anytype like string, boolean, number, list, tuple 
+
+            ==> 5. Accessing the values using keys : 
+                   ---------------------------------
+                  print(person['firstname']) // Bhargav 
+                  print(person['lastname']) // Mutyam 
+                  print(person['age']) //18
+                  print(person['address']) // Hyderabad
+                  print(person['language']) // English 
+                  print(person['isRegidtered']) // True 
+
+                  print(person[registered]) // keyError: registered as this key is not there 
+
+            ==> 6. Modifying values in dictionaries : 
+                   ---------------------------------- 
+
+                   person["firstname"] = "Mahesh"
+
+                   print(person)  
+                   
+                   // {"firstname" : "Mahesh", "lastname" : "Mutyam", "age" : 18, "address": 'Hyderabad', "language" : "English", "isRegistered" : True}
+
+            ==> 7. Adding new attributes to dictionaries : 
+                   --------------------------------------- 
+
+                   person['favorite_food'] = "Biryani"
+
+                   print(person) 
+                   // {"firstname" : "Mahesh", "lastname" : "Mutyam", "age" : 18, "address": 'Hyderabad', "language" : "English", "isRegistered" : True, favorite_food : "Biryani"}
+
+            ==> 8. Deleting attributes in dictionaries : 
+                   ------------------------------------- 
+
+                   del person["language"] 
+
+                   print(person) 
+
+                   //{"firstname" : "Mahesh", "lastname" : "Mutyam", "age" : 18, "address": 'Hyderabad', "isRegistered" : True, favorite_food : "Biryani"}
+
+            ==> 9. Key Error : 
+                  ------------- 
+
+                    if key is 0 or that key is not present in the dictionary we get the key error 
+
+                    or 
+
+                    Whenever we are accessing the key which is not present in the dictionary we get the key error. 
+
+            ==> 10.  Membership Testing : 
+                    --------------------
+
+                    print(18 in person) // False as it is only considering the keys not values 
+
+                    print("salary" in person) // False 
+
+                    print("address" in person) // True 
+
+            ==> 11. The len() Function : 
+                    --------------------- 
+
+                    person = {"firstname" : "Bhargav",
+                              "lastname"  : "Mutyam"
+                              "age" : 18, 
+                              "address" : "Hyderabad", 
+                              "language" : "English", 
+                              "isRegistered" : True
+                             }
+
+                    print(len(person)) // 6
+
+            ==> 12. Looping in Dictionaries : 
+                    ------------------------- 
+
+                    using for loop : 
+
+                        for x in person : 
+                            print(x) // firstname 
+                                         lastname 
+                                         age 
+                                         address
+                                         language 
+                                         isRegistered 
                     
+            ==> 13. The dict.items() function : 
+                    --------------------------- 
+
+                    for x in person.items() : 
+                         print(x) 
+
+                    //in the form of tuples 
+
+                      ('firstname', "Bhargav")
+                      ("Lastname", "Mutyam")
+                      ("age", 18)
+                      ("address" , "Hyderabad")
+                      ("langauge", "English")
+
+                    for (k,v) in person.items():
+                         print(v)
+
+                         // Bhargav
+                            Mutyam 
+                            18
+                            Hyderabad
+                            language 
+
+            ==> 14. List of Dictionaries : 
+                    ---------------------- 
+
+                    person1 = {"firstname" : "Bhargav",
+                              "lastname"  : "Mutyam"
+                              "age" : 18, 
+                              "address" : "Hyderabad", 
+                              "language" : "English", 
+                              "isRegistered" : True
+                             }
+
+                    person2 = {"firstname" : "Mahesh",
+                               "lastname"  : "babu"
+                               "age" : 30, 
+                               "address" : "Hyderabad", 
+                               "language" : "English", 
+                               "isRegistered" : False
+                              }
+
+            people =  [ 
+                         { "firstname" : "Bhargav",
+                           "lastname"  : "Mutyam"
+                           "age" : 18, 
+                           "address" : "Hyderabad", 
+                           "language" : "English", 
+                           "isRegistered" : True
+                         }, 
+                         {"firstname" : "Mahesh",
+                          "lastname"  : "babu"
+                          "age" : 30, 
+                          "address" : "Hyderabad", 
+                          "language" : "English", 
+                          "isRegistered" : False
+                         }
+            
+                       ]
+
+                    print(type(people)) // list 
+
+                    print(people[0]) // { "firstname" : "Bhargav",
+                                          "lastname"  : "Mutyam"
+                                          "age" : 18, 
+                                          "address" : "Hyderabad", 
+                                          "language" : "English", 
+                                          "isRegistered" : True
+                                        }
+
+                    print(people[1]) // {"firstname" : "Mahesh",
+                                         "lastname"  : "babu"
+                                         "age" : 30, 
+                                         "address" : "Hyderabad", 
+                                         "language" : "English", 
+                                         "isRegistered" : False
+                                        }
+
+                    print(type(people[0])) // dict 
+
+                    [1,2,3]   ==> list of numbers
+                    ["hi", "hello"] ==> list of strings
+                    [23.45, 4.5] ==> list of floats 
+
+                    print(people[0]["age"]) // 18 
+                    print(people[1]["age"]) // 30 
+
+                    print(people[0]["address"].upper()) //HYDERABAD 
+                     
+                    print(float(people[0]["age"])) // 18.0
+
+
+
 
             </code>
         </pre>
