@@ -11,6 +11,449 @@
         <pre>
             <code>
 
+               12. Set data types
+
+               => 1. Introduction to set data types
+               => 2. sets and frozensets
+               => 3. Importance of set data types
+               => 4. Creating a set using set literals
+               => 5. Creating a set using set() and frozenset() functions
+               => 6. Creating an empty set
+               => 7. Removal of duplicate elements in sets
+               => 8. Membership testing
+               => 9. The len() function
+               => 10. Looping in sets
+               => 11. Set operations
+               => 12. Set comparisons
+               => 13. Superset, subset and disjoint
+               => 14. Set methods
+
+
+         ==> 1. Introduction to set data types :
+               --------------------------------- 
+
+               ==> Set : An Unordered collection of unique items.  
+                         Items can be of any datatype, but must be hashable (meaning they can be used as dictionary keys)
+                         enclosed with curly brackets
+                         No duplicates allowed. 
+
+                     Ex : {1,2,3,4}
+                          {"apple", "banana"}
+
+               ==> frozen set : An immutable set. Once created, its items cannot be changed. 
+         
+                     Ex : frozenset({1,2,3,4}), frozenset(("a", "b", "c"))
+
+         ==> 2. Sets and Frozensets : 
+                ---------------------- 
+
+
+
+         ==> 3. Importance of SetData types : 
+                ------------------------------
+
+                sets are used to remove the duplicates 
+                but lists are allowing duplicates 
+
+                we have set operations and set comparisons 
+
+         ==> 4. Creating a set using Set Literals : 
+                ------------------------------------ 
+
+                nums = {21, 2 , 34, 'Hello'}
+                print(nums) 
+
+                 output : 
+                 --------- 
+                 {'Hello', 34, 2 ,21} here order is not preserved 
+
+                names = {'Mutyam', 'Bhargav', 'Reddy', 'Mutyam'}
+
+                print(names) 
+
+                 output : 
+                 ---------- 
+                 {'Bhargav', 'Reddy', 'Mutyam'} // no duplicates allowed 
+
+          ==> 5. Creating a set using set() and frozenset() functions : 
+                 ------------------------------------------------------ 
+
+                 x =  set(1,2,3)
+                 print(x) // Error => set expected at most 1 argument, got 3 
+
+                 x = set([1,2,3])
+                 print(x) // {1,2,3}
+
+                 nums = {2,5,7}
+                 print(nums[0]) // Error : 'set' object is not subscriptable  because we know that it is keep onchanging 
+                                             at 0 index we are getting different values.
+
+                  nums = {2,5,7}
+                  nums.add(6)
+                  print(nums) // {5,2,6,7} // set is Mutable 
+
+                  frozen set: 
+                  ----------- 
+
+                  c = frozenset([1,2,5])
+                  print(c) // frozenset({1,2,5})
+
+                  c.add(9)
+                  print(c) // error : frozenset object has no attribute 'add' as frozenset is immutable so we don't have attributes 
+                                      remove, add 
+
+          ==> 6. Creating an empty set : 
+                 ----------------------- 
+
+                 #empty list ==> l = []
+                 
+                 #empty string ==> s = ""
+
+                 #empty tuple ==> t = ()
+
+                 #empty dict ==> d = {}  it is taking as dictionary not set 
+
+                 #empty set ==> s = set() it is empty set 
+                                print(s)   //set()
+                                print(type(s)) // set
+
+                                s.add(2)
+                                print(s) // {2}
+
+          ==> 7. Removal of duplicate elements in sets : 
+                ---------------------------------------
+
+                 s = {23, 65, 34, 1, 8, 5, 65, 1, 23}
+                 print(s)
+
+                 output : {1, 34, 23, 8, 5, 65} they are not in order and unique values 
+
+                 nums = [21, 15, 56, 12, 8, 5 , 9, 15,21]
+                 nums1 = set(nums)
+                 print(nums1) // {5 , 8 , 9, 12 , 15 , 21}
+
+                 want resultant to be list : 
+                 nums1 = list(set(nums))
+                 print(nums1) // [5, 8, 9, 12, 15, 21]
+
+          ==> 8. Membership testing :
+                 -------------------- 
+                 
+                 values = {1, 5 ,6, 3, 45, 23, 4, 2, 3, 4 ,4}
+                 print(3 in values) // True 
+
+                 print(3 not in values) // False 
+
+                 print(9 not in values) // True 
+
+                 print(9 in values) // Flase 
+
+          ==> 9. The len() function :
+                 -------------------- 
+                 values = {1,5,6,3,45,23,4,2,3,4,4}
+
+                 print(len(values)) // 8 
+
+          ==> 10. Looping in sets:
+                  ------------------- 
+
+                  values = {1,5,6,3,45,23,4,2,3,4,4}
+
+                  for v in values:
+                      print(v) 
+                  output :
+                  ---------
+                  1 
+                  2
+                  3
+                  4
+                  5
+                  6
+                  45
+                  23 
+
+                  no index so while loop and enumerate functions are useless for looping in sets 
+
+          ==> 11. Set Operations : 
+                  ----------------- 
+                  Mainly four operations we use under set operations 
+
+                 * union 
+                 * intersection
+                 * difference
+                 * symmetric difference
+
+                 To perform the set opertions we need two sets atleast 
+
+                 a = {1,2,3,4}
+                 b = {3,4,5,6}
+
+                 union   | operator
+                 ----- 
+
+                 a union b means elements present in a and b or both 
+
+                 c = a | b 
+                 c = b | a 
+                 both gives same meaning and same output 
+                  
+                 print(c)  // {1,2,3,4,5.6}
+
+                 intersection   & operator 
+                 ------------  
+
+                 a intersection b means elements present in both a and b 
+
+                 c = a & b
+                 c = b & a 
+                 both gives same meaning and same output 
+
+                 print(c)  // {3,4}
+
+                 difference    - 
+                 -----------
+
+                 a difference b means elements present in a but not in b 
+                 b difference a means elements present in b but not in a 
+
+                 c = a - b 
+                 print(c) // {1,2}
+
+                 c = b - a 
+                 print(c) // {5,6}
+
+                 Note : order is important plays a key role 
+
+                 symmetric difference     ^
+                 ---------------------
+
+                 a symmetric diff b means elements present in a or b but not in both 
+
+                 c = b ^ a 
+                 c = a ^ b 
+
+                 print(c) // {1,2,5,6}
+
+
+                 set operations can also used on strings : 
+
+                 a = 'hi'
+                 b = 'hello'
+                 c = a|b 
+                 print(c) //error as a and b are not sets those string literals 
+
+                 union :
+                 ---------
+
+                 c = set(a) | set(b)
+                 print(c)  
+
+                 or 
+
+                 c = set(a).union(b)    // we can use union method as it directly converted into set but first variable should be use set()
+                 print(c)
+
+                 output : 
+                 --------- 
+                 {'e', 'l', 'o', 'h', 'i'}
+
+                 intersection :
+                 --------------- 
+
+                 c = set(a) & set(b)
+                 print(c) // {'h'}
+
+                 or 
+
+                 c = set(b).intersection(a)
+                 print(c) 
+
+                 difference :
+                 ---------------
+                  c = set(a) - set(b)
+                  print(c) // {'i'}
+
+                  or 
+
+                  c = set(a).difference(b)
+                  print(c) // {'i'}
+
+                  c = set(b) - set(a)
+                  print(c) // {'e', 'o', 'l'}
+
+                  or 
+
+                  c = set(b).difference(a)
+                  print(c) // {'e', 'o', 'l'}
+
+                symmetric difference :
+                ----------------------- 
+
+                  c =  set(a) ^ set(b)
+                  print(c) // {'e', 'l', 'i', 'o'}
+
+                  or 
+
+                  c = set(a).symmetric_difference(b)
+                  print(c) // {'e', 'l', 'i', 'o'}
+
+
+         Note : we can use it for sets also 
+                when we use symbols we need to use set() method for two values as we need to convert it into set 
+                when we use methods only first value needs to convert using set() method. 
+
+          ==> 12. Set comparisons : 
+                  ----------------- 
+
+
+                  a = {1,2,3,4}
+                  b = {5,6,7,8}
+
+                  print(a == b) // False 
+
+                  a =  {1,2,3,4}
+                  b =  {1,2,3,4}
+
+                  print(a == b) // True 
+
+                  b = {3,1,2,4}
+
+                  print(a == b) // True as order is not important ( unordered )
+
+          ==> 13. Superset, subset and disjoint : 
+                  -------------------------------- 
+
+                  a = {1,2,3,4,5,6}   ==> subset of b
+                  b = {1,2,3,4,5,6,7}  ==> superset of a 
+
+                   print( a < b)  // True 
+
+                   a = {1,2,3,4,5,6,7,8}
+                   b = {1,2,3,4,5,6,7,8}
+
+                   print(a < b) // False 
+
+                   a = {1,2,3,4,5,6,7,8}
+                   b = {1,2,3,4,5,6}
+
+                   print(a < b) // False 
+                   print(a > b) // False 
+
+                   a = {1,2,3,4,5,6,7,8}
+                   b = {1,2,3,4,5,6,7,8}
+
+                   print(a <= b) // True 
+
+                   or we can use methods instead of symbols 
+
+                   a = {1,2,3,4,5,6,7,8}  superset of b
+                   b = {1,2,3,4,5,6}   subset of a
+                   
+                   print(a.issubset(b)) // False 
+                   print(b.issubset(a)) // True 
+
+                   print(a.issuperset(b)) // True 
+                   print(b.issuperset(a)) // False 
+
+                   a = {1,2,3,4,5,6,7,8}
+                   b = {1,2,3,4,5,6,7,8}
+
+                   print(a.issuperset(b)) // True 
+                   print(a.issubset(b)) // True 
+
+
+                   Disjoint Sets : 
+                   ---------------- 
+
+                   A pair of sets which doesnot have any common element are called disjoint sets 
+
+                   a = {1,2,3,4,5,6}
+                   b = {1,2,3,4,5,6,7,8}
+
+                   print(a.isdisjoint(b)) // False 
+                    
+                   a = {1, 7, 8}
+                   b = {1,2,3,4,5,6}
+
+                   print(a.isdisjoint(b)) // False 
+
+                   a = {10, 7, 8}
+                   b = {1,2,3,4,5,6}
+
+                   print(a.isdisjoint(b)) // True 
+
+                   print(a.intersection(b)) //set()
+
+                   Note :  Whenever intersection of two sets is an empty set we can say both are disjoint 
+                           if the length is 0 then it's a disjoint 
+                           thats the relation between disjoint and intersection 
+
+
+                   a = {10, 7, 8,1}
+                   b = {1,2,3,4,5,6} 
+
+                   print(a.intersection(b)) // {1}
+
+         ==> Set Methods : 
+             --------------- 
+
+             five set methods : 
+
+             1. add : 
+                ----- 
+               a = {7,8,9}
+               a.add(34)
+
+               print(a) // {8,9,34,7}
+
+             2. pop : 
+               ---------
+
+               a = {7,8,9}
+               a.pop()
+
+               print(a) // {7,8}  
+               Note : it may remove random element as sets are unordered and no indexing 
+
+               a = {'Hello', 'Hi', "Welcome"}
+
+               a.pop()
+               print(a) // {'Hello', 'Welcome'}
+
+             3. discard : 
+                ----------- 
+
+                a = {'Hello', 'Hi', "Welcome"}
+
+                a.discard('Hello')
+                print(a) // {'Hi', 'Welcome'}
+
+                a.discard('good') // it allows even it is not there in the set 
+
+             4. remove :
+                -------- 
+
+                a = {'Hello', 'Hi', "Welcome"}
+
+                a.remove('Hello')
+                print(a) // {'Hi', 'Welcome'}
+
+                a.remove('good') // it throws an error as good is not there in the set 
+
+                that's the difference between remove and discard 
+
+             5. clear :
+                -------- 
+
+                a = {'hi', 'hello', 'welcome'}
+
+                a.clear()
+                print(a) // set()
+
+
+                Note : Frozen set is not support these methods because it is immutable but it supports 
+                       disjoint, subset, superset etc.,
+
             </code>
         </pre>
    </body>
