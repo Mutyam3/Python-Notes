@@ -10,6 +10,321 @@
         <pre>
             <code>
 
+              ****  10. Functions
+
+                    => 1. Importance of functions
+                    => 2. Defining a function
+                    => 3. Calling a function
+                    => 4. Parameters and arguments
+                    => 5. Return value
+                    => 6. Default argument values
+                    => 7. Positional arguments
+                    => 8. Keyword arguments
+                    => 9. Rules for using positional and keyword arguments
+                    => 10. *args and **kwargs
+                    => 11. Variable scope
+                    => 12. Global scope and local scope
+                    => 13. global and nonlocal statements
+
+
+              ==> Introduction to Functions :
+                  -------------------------- 
+
+                  ** A function is a block of code which only runs when it is called.
+
+                  ** You can pass data, known as parameters, into a function.
+
+                  ** A function can return data as a result.
+
+
+              ==> 1. Importance of Functions : 
+                     ------------------------- 
+
+                     Functions are useful for two reasons. 
+
+                     First, functions allow you to write a block of code once and use it multiple times. 
+                     You only need to write and debug the code once. This saves you lots of time in the future. 
+                     Functions also make your code easier to maintain because, if you need to update your function at some point,
+                     you only need to edit it in one place.  [Reusability]
+                     
+                     Secondly, writing functions can make your code easier for the reader to understand.  [ Readability ]
+                     If your function has a descriptive name (e.g. a function designed to calculate the tip on a restaurant bill could be called calculate_tip) 
+                     then anybody reading your code can understand what each line does without having to make sense of the calculations. 
+
+              ==> 2. Defining a function : 
+                     ---------------------- 
+
+                         // defining a function
+
+                        def comapare():
+                            x = 45
+                            y = 5
+                            if x > y:
+                               print('greater')
+
+                        here def is a function keyword 
+                        compare is the name of the function or identifier 
+
+                        // calling a function : 
+
+                        compare() // greater 
+
+                        def printhi():
+                           print('hi')
+
+                        printhi() // hi 
+
+              ==> 3. Calling a function : 
+                     -------------------- 
+
+                     def printsum():
+                         print(3+5)  
+
+                    printsum() // 8   ==> Calling a function 
+
+              ==> 4. Parameters and arguments :
+                     ---------------------------- 
+
+                     def printsum(a, b):  ==> here in function definition parenthesis we have a and b are parameters
+                         x = a + b
+                         print(x)
+
+                     printsum(12,1) ==> here while calling the function we are passing a values those are called arguments 
+                     printsum(10, 12)
+
+                      output :
+                      -------- 
+                      13 
+                      22 
+
+              ==> 5. Return value : 
+                     -------------- 
+
+                    Some situations instead of print the value , we need to store the values for that situation 
+                    we use return keyword 
+                     
+                    A return statement help us to get the value and we can do save it that value 
+
+                    def printsum(a,b)
+                        retun a + b 
+
+                    x = printsum(10,2)
+                    print(x)
+                    y = printsum(3,60)
+                    print(y)
+                    z = printsum(4,5)
+                    print(z)
+
+                    def printadd(a,b,c)
+                         return a + b + c 
+
+                    w = printadd(10, 2, 1)
+                    print(w)
+
+                    Output : 
+                    --------- 
+                    12
+                    63
+                    9
+                    13
+
+
+
+
+              ==> 6. Default argument values : 
+                     ------------------------ 
+
+                     def printsum(a,b,c)
+                         return a + b + c 
+
+                     x = printsum(10,2,8,7) this is always wrong passing more arguments than parameters 
+                     print(x) // error ==> printsum() takes 3 positionsal argument but 4 were given
+                     
+                     ---------------------------------------------
+
+                     def printsum(a,b,c)
+                         return a + b + c 
+
+                     x= printsum(10,2) 
+                     print(x) // error ==> printsum() missing 1 required positionalargument : 'c'
+
+                     ------------------------------------------------------
+
+                     def printsum(a,b,c=0)
+                         return a + b + c 
+
+                    x = printsum(10,2)
+                    print(x) // 12 
+
+                      def printsum(a,b,c=0) // this way of telling to python that if the value is not there please take this value as default value known as default argument value 
+                           return a + b + c 
+
+                    x = printsum(10,2,3)
+                    print(x) // 15
+
+                    Note : 
+
+                    def printsum(a=0,b,c=0) here donot write a = 0 because non-default argument follows default arguments 
+                       return a + b + c 
+
+                    x = printsum(10,2)
+                    print(x) // 12 
+
+                    (a, b=0, c=0) this one is correct 
+                    (a, b=0, c) this one is wrong as after default not follows non default 
+                    (a=1,b=2, c=4) this one is also correct making all default arguments 
+
+
+
+              ==> 7. Keyword arguments : 
+                     ---------------------
+
+                    def printsum(a,b,c)
+                        return a + b + c 
+
+                    x = printsum(c = 30, a = 10, b = 20)
+                    print(x) // 60 
+
+                    def printsum(a,b,c)
+                         print(a)
+
+                    printsum(c=30, a=10, b=20) // 10  This way of passing arguments are called keyword argument 
+
+              ==> 8. Positional argument : 
+                     --------------------- 
+
+                     def printsum(a,b,c):
+                         print(a)
+
+                     printsum(30, a = 20,c = 10) // first value is for a so next a = 20 is wrong 
+
+                     we should don't write it 
+
+                     we need to write like this : 
+
+                     def printsum(a,b,c):
+                         print(a)
+
+                     printsum(30, b=20,c=10) // first value is for a 
+                     30 is the positional argument 
+
+
+               => 9. Rules for using positional and keyword arguments :
+                     --------------------------------------------------
+
+                             def printsum(a,b,c):
+                                print(a)
+
+                             printsum(30, b=20,c=10) // first value is for a 
+
+
+                     This 30 is the positional argument ==> passing argument directly without = operator 
+                     b = 20 and c = 10 are keyword arguments ==> with = operator 
+
+                     Note :  Always keep in Mind that positional argument will always comes before keyword argument 
+                             (20, b = 20, c =10)  correct way 
+
+                             (a = 10, b, c) wrong way 
+
+              ==> 10. *args and **kwargs : 
+                      --------------------- 
+
+
+
+
+
+              ==> 11. Variable scope : 
+                      ---------------- 
+
+              ==> 12. Global scope and local scope : 
+                     ------------------------------ 
+
+                      x = 10 
+
+                      def abc():
+                         print(x)
+
+                      abc()
+
+                      output:
+                      ------- 
+                      10 
+
+                ---------------------------------
+
+                      x = 10  ==> global variable
+
+                      def abc():
+                          x = x + 1  ==> local variable ==> x = ==> creates new x variable and x in x + 1 is not defined so nothing + 1 gives error 
+                          print(x)
+                     
+                      abc()
+
+                      output:
+                      ---------- 
+
+                      error : cannot access local variable 'x' where it is not associated with a value 
+
+                    Python first search for local variable in function if it is defined it is accessed but if it is not defined 
+                    it search for global variable then global variable get accessed in function 
+
+                    x = 10    // global variable
+
+                    def abc():
+                       x = 56 
+                       print(x)  // local variable
+ 
+                    abc() // 56 
+
+
+                    x = 10   // global variable 
+
+                    def abc():
+                    
+                       print(x) // local variable
+ 
+                    abc() // 10
+
+                   
+                    Python checks / search for first local variable, if it is not there then only it goes out of the function and 
+                    if it is there it takes global variable 
+
+                    if both are not there x is not defined u get 
+
+                    x = 10 
+
+                    def abc():
+                       x = 56
+                       x = 10 
+                       print(x)
+
+                    abc() // 10 it is local variable x
+
+                    x = 10 // global variable
+
+                    def increment():
+                         global x  by writing this statement any x writing below code we can access global variable inside the function 
+                         x = x + 1 
+                         print(x)
+
+                    increment() //11
+
+                    x = 10 
+                    y = 20 
+
+                    def increment():
+                        global x 
+                        global y 
+
+                        x = x + 1 
+                        y = y + 1 
+                        print(x)
+                        print(y)
+
+                    increment() //11
+                                  21
+                        
+
             </code>
         </pre>
     </body>
