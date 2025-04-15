@@ -1,1 +1,227 @@
+<html>
+    <head>
+        <title>
+            Notes11
+        </title>
+    </head>
+    <body>
+        <pre>
+            <code>
 
+
+            ****
+                13. Advanced data handling techniques : 
+          
+                => 1. Unpacking sequences(list,str,tuple)
+                => 2. Rules for unpacking
+                => 3. Unpacking sequences using * operator
+                => 4. Creating a copy of a list by unpacking
+                => 5. Adding new elements to lists and tuples by  unpacking
+                => 6. Multiple assignments while unpacking
+                => 7. Unpacking dictionary keys
+                => 8. Accessing dictionary values after unpacking
+                => 9. Unpacking dictionaries using ** operator
+                => 10. Creating a copy of a dictionary by unpacking
+                => 11. Adding new attributes by unpacking
+                => 12. Merging dictionaries by unpacking
+                => 13. Comprehensions for creating data structures
+                => 14. List comprehensions
+                => 17. Set comprehensions
+                => 18. Dictionary comprehensions
+                => 19. for and if statements in comprehensions
+                => 20. Named functions vs anonymous functions
+                => 21. Lambda function expressions
+                => 22. Usage of lambda functions
+                => 23. Built in functions
+
+
+        ==> 1. Unpacking sequences (list, str, tuple) : 
+               ---------------------------------------- 
+
+               unpacking lists : 
+               -------------------
+
+                  nums = [12,56,34]
+                  a, b,c = nums 
+
+                  print(a) // 12
+                  print(b) // 56
+                  print(c) // 34 
+
+                  a,b = nums 
+
+                  here, we have two variables but three values 
+                  so it throws an error => valuerror : too many values to unpack 
+
+                  a, b,c,d = nums 
+
+                  again throws an error => valuerror : not enough values to unpack (expected 4, got 3)
+
+
+                  Note : We should keep in mind that while unpacking the list 
+                         no of variables = no of values 
+
+                unpacking tuple : 
+                ------------------- 
+
+                nums = (23, 56, 45)
+
+                a,b,c = nums 
+
+                print(a) // 23
+                print(b) // 56
+                print(c) // 45 
+
+                unpacking str :
+                ---------------- 
+
+                name = 'dog'
+
+                a,b,c = names 
+
+                print(a) //d
+                print(b) //o
+                print(c) //g 
+
+        ==> 2. Rules for unpacking : 
+               ---------------------- 
+
+               Number of Values = Number of Variables
+
+        ==> 3. Unpacking sequences using * operator : 
+               --------------------------------------- 
+
+               we need a better solution for the problem : if we have more values we need to take more variables. 
+
+               nums = [1,4,2,4,5,6,6,7]
+
+               print(*nums) // 1,4,2,4,5,6,6,7 
+
+               x, *y = nums 
+
+               print(x) // 1
+               print(y) // [4,2,4,5,6,6,7]
+               print(*y) // 4 2 4 5 6 6 7 
+
+               x, *y, z = nums 
+
+               print(x) // 1
+               print(y) // [4,2,4,5,6,6]
+               print(z) // 7
+
+               a, x, *y, z = nums 
+
+               print(a) // 1
+               print(x) // 4 
+               print(*y) // [2,4,5,6,6]
+               print(z) // 7
+
+
+               where ever we have star * it stores any values and more values.
+               unpacking without using more variables by using * 
+               Note : always * gets the list as an output even we performs on the tuples or strings
+
+               tuples :
+               --------- 
+
+               nums = (1,4,2,4,5,6,6,7)
+
+               a, *b, c = nums 
+
+               print(a) // 1
+               print(b) // [4,2,4,5,6,6]
+               print(c) // 7
+
+
+               Strings :
+               --------- 
+
+               x = 'Mutyam'
+
+               a, *b, c = x 
+               print(a) // M
+               print(b) // ['u', 't', 'y', 'a']
+               print(c) // m 
+
+
+        ==> 4. Creating a copy of a list by unpacking : 
+               ---------------------------------------- 
+
+               nums = [1,4,2,4,5,6,6,7]
+
+               x = [*nums]
+               print(x) // [1,4,2,4,5,6,6,7] 
+
+               [*a] = nums 
+               print(a)  //[1,4,2,4,5,6,6,7]
+
+               *a, = nums   
+               print(a) // [1,4,2,4,5,6,6,7] 
+
+              
+
+        ==> 5. Adding new elements to lists and tuples by unpacking : 
+               ----------------------------------------------------- 
+
+                Adding new elements to lists : 
+                ------------------------------- 
+
+                x = [23,45,62]
+
+                y = [*x, 54]
+
+                print(y) // [23,45,62,54]
+
+                y = [50, *x]
+
+                print(y) // [50,23,45,62,54]
+
+                Adding new elements to tuples :
+                ------------------------------
+
+                a = (45, 25, 65)
+
+                b = [66,*a]
+
+                print(b) // [66,45,25,65]
+
+                c = [*a, 22]
+
+                print(c) // [45,25,65,22]
+
+
+
+        ==> 6. Multiple assignments while unpacking : 
+               --------------------------------------- 
+
+
+        ==> 7. Unpacking dictionary keys :
+               ---------------------------- 
+
+               
+
+
+
+
+
+               
+
+
+
+
+
+        
+         
+
+
+                  
+
+                  
+
+
+
+
+            </code>
+        </pre>
+    </body>
+</html>
