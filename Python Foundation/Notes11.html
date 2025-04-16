@@ -197,28 +197,487 @@
 
         ==> 7. Unpacking dictionary keys :
                ---------------------------- 
-
                
-
-
-
-
-
+               person = {
+                     'firstname' : 'Mutyam',
+                     'lastname' : 'Bhargav'
+               }
                
+               a, b = person 
 
+               print(a) // firstname 
+               print(b) // lastname 
+
+               a,b,c = person 
+
+               print(a)
+               print(b) 
+
+               throws an error ==> valueerror: not enough values to unpack (expected 3 got 2)
+
+               a, = person 
+ 
+               print(a) // valueerror : too many values to unpack (expected 1)
+
+               a,b = person
+               print(person[a]) // Mutyam
+               print(person[b]) // Bhargav 
+
+        ==> 9. Unpacking dictionaries using ** operator :
+               ------------------------------------------- 
+
+               person = {
+                     'firstname' : 'Mutyam',
+                     'lastname' : 'Bhargav',
+                     'age' : 25
+               }
+
+               a, *b = person 
+
+               print(a) // ['firstname']
+
+               print(*b) // ['lastname', 'age']  we are getting list as a result with keys 
+
+
+
+
+        ==> 10. Creating a copy of a dictionary by unpacking :
+                ---------------------------------------------- 
+
+               person = {
+                     'firstname' : 'Mutyam',
+                     'lastname' : 'Bhargav'
+               }
+
+               v = {**person} 
+               print(v)  // {'firstname' : 'Mutyam', 'lastname' : 'Bhargav'}
+
+        ==> 11. Adding new attributes by unpacking :
+                ------------------------------------ 
+
+                person = {
+                     'firstname' : 'Mutyam',
+                     'lastname' : 'Bhargav'
+               }
+
+                newperson = {**person, "city": "Hyderabad"}
+                print(newperson) //  {'firstname' : 'Mutyam', 'lastname' : 'Bhargav', 'city': 'Hyderabad'}
+
+                newperson = {**person, "city" : "Hyderabad", "languages" : ['Telugu', 'English','Hindi']}
+                print(newperson)
+
+                ouput : 
+                ------- 
+
+                {'firstname' : 'Mutyam', 'lastname' : 'Bhargav', 'city': 'Hyderabad', "languages" : ['Telugu', 'English','Hindi']}
+
+
+
+        ==> 12. Merging dictionaries by unpacking : 
+                ------------------------------------ 
+
+                person = { 
+                      "firstname" : "Bhargav",
+                      "lastname" : "Mutyam"
+                }
+
+                details = {
+                     "age" : 50,
+                     "city" : 'Hyderabad' 
+                }
+
+                personalDetails = {**person, **details}
+                print(personalDetails) 
+
+                //{'firstname' : 'Mutyam', 'lastname' : 'Bhargav','age' : 50, 'city': 'Hyderabad'}
+
+        ==> 13. Comprehensions for creating data structures : 
+                --------------------------------------------- 
+
+                n = [1,2,3]
+
+                m = []
+
+                for i in n:
+                    m.append(i**2)
+
+                print(m)
+                // [1,4,9]
+
+                With above code we need to do lot of things like we need two variables and loop and append method 
+                to comprehensive the list 
+
+                so we have short method to do that with comprehensions 
+
+
+                n = [1,2,3]
+
+                # Squaring 
+
+                m = [x**2 for x in n] // here x is each value 
+                print(m) // [1,4,9]
+
+                # Adding + 2
+
+                m = [ x+2 for x in m ]
+                print(m) // [3,4,5]
+
+                #Multiplying with 2 
+
+                m = [x * 2 for x in m]
+                print(m) // [2,4,6]
+              
+              ----------------------------------
+                Need even numbers from the list 
+
+        ==> 14. List comprehensions :
+                ---------------------- 
+
+                n = [23,12,4,78,92,35,60,7]
+
+                m = []
+
+                for num in n:
+                     if num % 2 == 0:
+                         m.append(num)
+
+                print(m) // [12,4,78,92,60]
+
+
+                m = [num for num in n if num % 2 == 0]
+
+                here firstone is what we are appending 
+                and next we have any loop here for loop 
+                and then if statement or condition 
+
+                print(m) // [12,4,78,92,60]
+
+                m = [num, for num in n if num % 2 == 1]
+
+                print(m) // [23,35,7]
+
+ 
+              Note : 
+              ------- It won't work on tuples as tuples is immutable 
+              but works on sets ,lists, dictionaries 
+
+
+        ==> 15. Set comprehensions  : 
+              --------------------- 
+
+              n = {23,12,4,78,7,5}
+
+              m = {num for num in n if num % 2 == 0}
+
+              print(m) // {12,4,78} 
+
+              n = 'hello'
+
+              m = {x for x in n }
+
+              print(m) // {'h', 'e', 'o', 'l'}
+
+              m = {x for x in n if x != 'e'}
+
+              print(m) // {'l', 'o', 'h'}
+
+              m = {x for x in n if x not in 'apple'}
+
+              print(m) // {'o', 'h'}
+
+       ==> 16. Dictionary Comprehensions  : 
+               ----------------------------- 
+
+               nums = [1,2,3]  // {1:1, 2:4, 3:9} i need this output by comprehension 
+
+               p = {x:x**2 for x in nums}
+
+               print(p) // {1:1, 2:4, 3:9}
+
+               p = {x:x**2 for x in nums if x%2==0}
+
+               print(p) // {2:4}
+
+       ==> 17. for and if statements in Comprehenions :
+               ----------------------------------------- 
+
+               firstone is what we are appending 
+               and next we have any loop like for loop 
+               and then if statement or condition
+
+                [appendone for loop  if condition]
+
+       ==> 18. Named Functions Vs Anonymous Functions : 
+               ---------------------------------------- 
+
+                   Named Functions : 
+                   ------------------ 
+
+                   def add(a,b):
+                      return a + b 
+
+                   x = add(2,4)  //calling the function with function name 
+                   print(x)
+
+                   Here for the above function, there is a name called add 
+
+                   Anonymous Functions : 
+                   ----------------------
+                   
+                   Functions without name are called anonymous function 
+
+                   no names for function but question is : is it possible to call the function without function name 
+
+                   In anonymous function, we give to some one who they call it 
+                   
+                   
+       ==> 19. Lambda Function Expressions :
+               ----------------------------- 
+
+                    def add(x,y):
+                        return x + y 
+
+              
+                     lambda x,y: x+y    ==> it is the lambda equivalent to the above function. 
+
+                     def avg(a,b,c):
+                         return (a+b+c)/3 
+
+                     lambda a,b,c : (a+b+c) /3 
+
+                     Note : whatever we write after colon it is a return value 
+
+                     lambda paramters : return value 
+                     
+       ==> 20. Usage of Lambda function : 
+               -------------------------- 
+
+                  nums = [12,43,12,5,566,34]
+
+                  nums.sort()
+
+                  print(nums)
+
+                  Output : 
+                  --------- 
+                  [5,12,12,34,43,566]
+
+                 if it is numbers it gets sorted using < (less than)
+                 but if we have dictionaries in the list it won't possible 
+                 to make it possible we pass the function like below: 
+
+                 var products = [
+                 {
+                     "name": "Duracell - AAA Batteries (4-Pack)",
+                     "type": "HardGood",
+                     "price": 5.49,
+                     "category": "Household Batteries",
+                     "manufacturer": "Duracell",				
+                 },
+                 {
+                     "name": "Hard Rock TrackPak - Mac",
+                     "type": "Software",
+                     "price": 29.99,
+                     "category": "Recording Equipment",
+                     "manufacturer": "Hal Leonard",				
+                 },
+                 {
+                     "name": "Duracell - AA 1.5V CopperTop Batteries (4-Pack)",
+                     "type": "HardGood",
+                     "price": 5.62,
+                     "category": "Household Batteries",
+                     "manufacturer": "Duracell",				
+                 },
+                 {
+                     "name": "Energizer - MAX Batteries AA (4-Pack)",
+                     "type": "HardGood",
+                     "price": 5.32,
+                     "category": "Household Batteries",
+                     "manufacturer": "Energizer",				
+                 },
+                 {
+                     "name": "METRA - Antenna Cable Adapter - Black",
+                     "type": "HardGood",
+                     "price": 13.99,
+                     "category": "Antennas & Adapters",
+                     "manufacturer": "Metra",				
+                 },
+                 {
+                     "name": "WipeDrive Six - Mac|Windows",
+                     "type": "Software",
+                     "price": 23.99,
+                     "category": "Maintenance Software",
+                     "manufacturer": "White Canyon",				
+                 }
+             ];
+
+             def abc(d):
+              return d['price']
+
+              products.sort(key=abc) 
+
+              print(products) // based on price it get sorted ascending order 
+
+              lambda equivalent to the above function : 
+
+                 products.sort(key = lambda d:d['price'])
+
+
+              def xyz(d):
+                 return d['name']
+
+              products.sort(key =xyz)
+
+              print(products) // based on name it get sorted alphabetically 
+
+              lambda equivalent to the above function : 
+               
+                  products.sort(key = lambda d:d['name'])
+
+                  products.sort(key = lambda d:d['manufacturer'])
+
+
+       ==> 21. Built in functions : 
+               ---------------------- 
+
+               1. all() 
+
+                   nums = [23,56,32,12,5,78,90]
+
+                   count = 0
+                   for num in nums:
+                       if num > 0:
+                          count += 1 
+
+                   if count == len(nums)
+                       print('all are positives')
+                   else:
+                       print('all are not positives') 
+
+                 instead of writing, we can use built in function all()
+
+                 x = all(num>0 for num in nums)
+                 print(x) // True 
+
+                 returns True or False 
+
+               2. any()
+
+                   any number is negative gives True otherwise False 
+
+                   nums = [23,56,32,12,-5,78,90]
+                   x = any(num < 0 for num in nums)
+                   print(x) // True 
+
+               3. bool()
+
+                   x =  bool(0)
+                   print(x) // False 
+
+               4. dict() 
+
+                     x = dict([('firstname', 'Bhargav'), ('lastname', 'Mutyam')])
+                     print(x)
+
+                     {'firstname' : 'Bhargav', 'lastname' : 'Mutyam'}
+
+               5. enumerate()
+
+                     nums = [1,5,6]
+
+                     for i,v in enumerate(nums):
+                           print(i) // 0 1 2
+                           print(v) // 1 5 6 
+
+              6. filter() 
+
+                     nums = [12,34,33,5,76,99]
+
+                     // Type 1 : list comprehension
+
+                     evennums = [num for num in nums if num%2==0]
+                     print(evennums) // [12,34,76]
+
+                     // Type 2 :  filter method
+                     evennums = list(filter(lambda num : num%2==0, nums))
+                     print(evennums) // [12,34,76] 
+
+              7. map()
+
+                      nums = [1,2,3]
+
+                      squares = [num**2 for num in nums]
+
+                      print(squares) // [1, 4, 9]
+
+                      using map :
+
+                      squares = map(lambda num:num**2,nums) // here after , we need to put the list name 
+                      print(squares) // [1, 4, 9]
+                      
+              8. max() 
+
+                     x  = max(5,7)
+                     print(x) // 7 
+
+              9. min()
+
+                     x = min(2,-5)
+                     print(x) // -5 
+
+              10. sum() 
+
+                    x = sum(1,2)
+
+                    print(x) //error :  'int' object is not iterable 
+
+                    x = sum([1,5,6])
+
+                    print(x) // 12 
+
+              11. sorted()
+
+                     nums = [67, 21, 98, 32,678,33]
+                     nums.sort()
+                     print(nums) // [21,32,33,67,98,678]
+
+                     here original list itself changing and get sorted but I don't need to be change the original list 
+                     for that, what we do is : 
+
+                     nums = [67, 21, 98, 32,678,33]
+                     x = sorted(nums) 
+                     print(x)  // [21,32,33,67,98,678]
+                     print(nums) // [67, 21, 98, 32,678,33]
+
+                     if we have list of dictionaries we need to pass the function to sort 
+
+              12. reverse() 
+
+                      nums = [67, 21, 98, 32,678,33]
+
+                      x = list(reverse(nums))
+                      print(x) //[33,678,32,98,21,67] 
+
+
+
+
+              bool()
+              int()
+              float()
+              str()
+              dict()
+              list()
+              set()
+              frozenset()
+              input()
+              len()
+              print()
+             
 
 
 
 
         
-         
-
-
-                  
-
-                  
-
-
 
 
             </code>
