@@ -1,0 +1,198 @@
+<html>
+    <head>
+        <title>
+            Mutyam ==> Notes12
+        </title>
+    </head>
+
+    <body>
+        <pre>
+            <code>
+
+                *** 14. File handling in Python
+         
+                => 1. File pathnames
+                => 2. Reading a file
+                => 3. The open() method
+                => 4. Modes for opening files
+                => 5. Opening a file in ‘r’ mode
+                => 6. The file object
+                => 7. file object methods
+                => 8. The read() method
+                => 9. The close method()
+                => 10. Writing to a file
+                => 11. Opening a file in ‘w’ mode
+                => 12. The write() method
+                => 13. Writing to a file by opening it in ‘a’(append) mode
+                => 14. Opening files safely by using the ‘with’ statement
+
+            ==> 1. File Pathnames  : 
+                   ----------------- 
+
+                   File locations 
+
+                   x = 'D:\Python Notes\Python-Notes\Python Foundation\Notes12.html'
+
+
+            ==> 2. Reading a file : 
+                   ----------------- 
+
+                   if it is in same folder we can directly write the file name instead of giving whole path 
+
+                   file = open('users.txt')  // default we have 'r' mode 
+                   <!-- print(file) //<_io.TextIOWrapper name="users.txt" mode="r" encoding="cp1252" -->
+
+                   filedata = file.read() 
+                   print(filedata) // Bhargav 
+                                      Reddy 
+                                      Mutyam 
+
+                    file.close() // after reading and writing the file we should safely close the file 
+                                    if it is not close, someother person may write some extra code  
+
+            ==> 3. The open() method : 
+                   ---------------------- 
+
+                   open('filepathname') 
+
+                   open(file_address, access_mode) 
+
+            ==> 4. Modes for opening files : 
+                   -------------------------- 
+
+                   mode = 'r'  ==> for reading the file 
+                   mode = 'w'  ==> for writing the file 
+                   mode = 'a'  ==> for appending 
+
+                   r: Opens a file for reading only
+                   r+: Opens a file for both reading and writing
+                   w: Opens a file for writing only
+                   w+: Open a file for writing and reading.
+                   a: Opens a file for appending
+                   a+: Opens a file for both appending and reading
+
+                   file = open('pathname', 'r')
+                   file = open('pathname', 'w')
+                   
+
+            ==> 5. Opening a file in ‘r’ mode : 
+                   ----------------------------- 
+
+                   file = open('pathname', 'r')
+                   
+                   
+            ==> 6. The file object : 
+                   -----------------
+
+                   f = open('__file-pathname__', accessmode)
+
+                   here f is the file object created
+                   the open keyword returns a file object  
+
+            ==> 7.  File object methods : 
+                    --------------------- 
+
+                    
+                   close() ==>	Closes the file
+                   detach() ==>	Returns the separated raw stream from the buffer
+                   fileno()	==> Returns a number that represents the stream, from the operating system's perspective
+                   flush()	==> Flushes the internal buffer
+                   isatty()	==> Returns whether the file stream is interactive or not
+                   read()	==> Returns the file content
+                   readable() ==>	Returns whether the file stream can be read or not
+                   readline() ==>	Returns one line from the file
+                   readlines() ==>	Returns a list of lines from the file
+                   seek()	==> Change the file position
+                   seekable() ==>	Returns whether the file allows us to change the file position
+                   tell()	==> Returns the current file position
+                   truncate() ==>	Resizes the file to a specified size
+                   writable() ==>  Returns whether the file can be written to or not
+                   write()	==> Writes the specified string to the file
+                   writelines() ==>	Writes a list of strings to the file
+
+            ==> 8. The read() method : 
+                   ------------------- 
+
+                   file = open('users.txt')
+                   filedata = file.read()
+                   print(filedata) // Mahesh
+                                      Bhargav
+
+            ==> 9. The close method() : 
+                   -------------------- 
+
+                   file = open('users.txt')
+                   filedata = fileread()
+                   file.close()
+
+
+            ==> 10. Writing to a file
+            ==> 11. Opening a file in ‘w’ mode
+            ==> 12. The write() method
+           
+
+                   file = open('users.txt', 'w')
+                   file.write('Ramesh')
+                   file.close()
+
+                   Here, the problem is it replace the existing text in the file with new text
+                   but it is not a problem, in some cases, if we need to replace whole text it would be best to use write() method 
+                   if we want to add the new text to the previous text then we do :
+                 
+            ==> 13. Writing to a file by opening it in ‘a’(append) mode : 
+                    ----------------------------------------------------- 
+
+                   file = open('users.txt', 'a')
+                   file.write('suresh')
+                   file.close()
+
+                   if we run we get the text like this in the file : Rameshsuresh 
+                   but it not look nice 
+
+                   file = open('users.txt', 'a')
+                   file.write('Ramesh' + '\n') // new line character
+                   file.close()
+
+                   file = open('users.txt', 'a')
+                   file.write('Mahesh' + '\n') // new line character
+                   file.close()
+
+                   output in the file : 
+                   -------------------- 
+                   Ramesh 
+                   Mahesh
+
+            ==> 14. Opening files safely by using the ‘with’ statement : 
+                    ---------------------------------------------------- 
+
+                    most of the programmers now using with statement 
+
+                    with open('users.txt') as file:
+                    filedata = file.read()
+                    print(filedata) // Mahesh
+                                       Bhargav 
+
+                    file.read()
+
+                    Here no need to close the file as it automatically done 
+                    after coming out of it the file gets closed 
+
+                    If I want to read again it throws an error 
+
+                    with open('users.txt', 'a') as file:
+                        file.write('ramu' + '\n')
+
+                    with open('users.txt', 'a') as file:
+                        file.write('babu' + '\n')
+
+                    output in the file : 
+                    ---------------------
+                      ramu 
+                      babu 
+
+
+
+            </code>
+        </pre>
+    </body>
+</html>
