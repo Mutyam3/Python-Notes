@@ -1,0 +1,324 @@
+<html>
+    <head>
+        <title>
+            Mutyam ==> Notes14
+        </title>
+    </head>
+
+    <body>
+        <pre>
+            <code>
+                ***
+                => 1.Object Oriented Programming in Python
+                => 2.Polymorphism in Python
+                => 3.Encapsulation in Python
+                => 4.Inheritance in Python
+                => 5.Data Abstraction in Python 
+
+
+            ==> 1. Object Oriented Programming in Python :
+                   --------------------------------------- 
+
+                
+            ==> 2.Inheritance :  
+                  ------------- 
+
+                  class A():  # Parent Class or Base Class
+                      x = 10  // property
+
+                      def printhi(self):
+                          print('hi')
+
+                  class B(A):   //here I am passing A as a parameter to class B it tells us that B class is inheriting all methods and properties of class A
+                      y = 20    # Child Class or Derived class
+                    
+                      def printsum(self):
+                          print(self.x + self.y)
+
+                  b1 = B()
+                  print(b1.x) // 10
+                  print(b1.y) // 20 
+                  b1.printhi() // hi
+                  b1.printsum() // 30 
+
+
+                // Mutliple inheritance:
+                   ---------------------
+                  class A():
+                      x = 10 
+
+                  class B():
+                     y = 20 
+
+                  class C(A,B): 
+                      def printsum(self):
+                          print(self.x + self.y)
+
+                  
+                  c1 = c()
+                  c1.printsum()  // 30 
+
+
+                // Multi-level Inheritance : 
+                   ------------------------
+
+                   class A():
+                       x = 10 
+
+                   class B(A):
+                       y = 20 
+
+                   class C(B):
+                       def printsum(self):
+                           print(self.x + self.y)
+
+                
+                   c1 = c()
+                   c1.printsum() // 30 
+
+                
+        ==> 2.Polymorphism in Python : 
+              ------------------------- 
+
+              The word "polymorphism" means "many forms", and 
+              in programming it refers to methods/functions/operators with the same name that can be executed on many objects or classes.
+
+              Python function that can be used on different objects is the len() function.
+              Example : 
+
+              len() : 
+              ------- 
+
+              on Strings : returns the number of characters 
+              ---------- 
+
+                ex : x = 'Hello'
+                     print(len(x)) // 5 
+
+              on Tuples : returns the number of items in tuple 
+              ---------- 
+
+                  ex : x = ('mutyam', 'bhargav', 'reddy')
+                       print(len(x)) // 3 
+
+              on Dictionary :   returns the number of key/value pairs in the dictionary 
+              ----------------
+
+                   ex : x = {
+                         "Firstname" : "Bhargav", 
+                         "Lastname" : 'Mutyam',
+                         age : 25
+                       }
+
+                       print(len(x)) // 3
+
+
+
+                    class A():
+                        x = 10 
+
+                        def printValue(self):
+                             print(self.x)
+
+                    class B(A): 
+                        y = 20 
+
+                        def printValue(self):
+                             print(self.y)
+
+                    b1 = B()
+                    print(b1.x)
+
+                    b1.printValue() // 20 here I am calling method in class A but I am getting the result from the class B method 
+                                          because if child class is having method of same name like its parent it will call the child class method 
+                                          its called method overriding 
+
+                    
+
+                      class A():
+                         x = 10 
+                  
+                        def printValue(self):
+                            print(self.x)
+                  
+                      class B(A): 
+                          x = 20 
+                  
+                        def printValue(self):
+                            print(self.y)
+                  
+                    b1 = B()
+                    print(b1.x) // 40 here attribute oveeriding or Runtime Polymorphism
+
+
+            Method Overloading in python : 
+            ------------------------------
+
+            Method Overloading in Python is a type of Compile-time Polymorphism using which we can define two or more methods in the same class 
+            with the same name but with a different parameter list
+
+            We cannot perform method overloading in the Python programming language as everything is considered an object in Python. 
+            Out of all the definitions with the same name, it uses the latest definition for the method. 
+            Hence, we can define numerous methods with the same name, but we can only use the latest defined method.
+
+
+            Method Overriding in Python :
+            ------------------------------
+            Method Overriding is a type of Run-time Polymorphism. 
+            A child class method overrides (or provides its implementation) the parent class method of the same name, parameters, and return type.
+            It is used to over-write (redefine) a parent class method in the derived class. Let's look at an example:
+
+            ex: 
+
+                class Employee():
+
+                      #constructor 
+                     def __init__(self, name, salary):
+                          self.name = name 
+                          self.salary = salary
+
+                     def getName(self):
+                         return self.name 
+                        
+                     def getSalary(self):
+                         return self.salary 
+
+
+                class SalesOfficer(Employee):
+                       def __init__(self,name, salary, inc)
+                            super().__init__(name,salary)
+                            self.inc = inc 
+
+                        def getSalary(self):
+                            return self.salary + self.inc
+
+                e1 = Employee('Mutyam', 1000)
+                s1 = SalesOfficer('Bhargav', 1100, 100)
+
+                print(f"Total salary for {e1.getName()} is Rs {e1.getSalary()} ")
+                print(f"Total Salary for {s1.getName()} is Rs {s1.getSalary()"})
+
+                Output :
+                --------- 
+
+                Total salary for Mutyam is Rs 1000
+                Total salary for Bhargav is Rs 1200 
+
+
+         ==> 3.Encapsulation in Python : 
+              --------------------------- 
+
+              Protecting some of the variables from accessing outside 
+
+              wrapping of the data and methods in a single unit is called encapuslation 
+
+
+              class A():
+                x = 10 
+
+                  def __init__(self,price):
+                      self.price = price 
+
+                  def printPrice(self):
+                       print(self.price)
+                        
+
+
+              <!-- a1 = A(200) -->
+
+              print(A.x) // 10
+              print(A.price) //error Attribute error : type object 'A' has no attribute 'price'
+                               level 1 protection we are doing here we cannot access the price from outside the class 
+
+              using instance we can access from outside the class but using class name we cannot access 
+
+              a1 = A(40)
+              a1.printPrice() // 40 
+
+
+              class A():
+                  x = 10 
+
+                  def __init__(self,p,d):
+                        self.price = p 
+                        self._date = d  // here single underscore tell us that don't use or access from outside the class it is protected even though we get output don't use it. 
+
+                  def printPrice(self):
+                       print(self.price)
+
+              a1 = A(50, '20 July')
+              print(a1._date) //20 July 
+
+
+              class A(): 
+                  x = 20 
+
+                  def __init__(self,p,d,c):
+                       self.price = p   
+                       self._date = d 
+                       self.__color = c  // private variable cannot access by object also or instances
+
+                  def printPrice(self):
+                      print(self.price)
+                      
+                  def printColor(self):
+                      print(self.__color)
+
+              a1 = A(50, '21 July', 'red')
+              print(a1.__color) // error class A has no attribute 
+              a1.printColor() // red we can access by calling the function 
+
+
+              Note : whatever we write under init method we cannot access nothing outside the class by using Class 
+                      but access from outside by instances (object)
+
+
+                      
+        ==> 5. Data Abstraction in Python : 
+               ----------------------------
+
+               Hiding the implementation details 
+
+                   class A(): 
+                       x = 10 
+
+                       def printX(self):
+                           print(self.x)  // repeating the code again so instead of writing same code use 'pass' keyword 
+
+                   class B(A):
+                       
+                        def printX(self): 
+                            print(self.x)
+
+                    b1 = B()
+                    b1.printX() // 10 
+
+
+
+                    we need to import abstract class 
+
+                    from abc import ABC, abstractmethod 
+
+                    //here abc means abstract base class 
+
+                    class A(ABC): 
+
+                      x  = 10 
+
+                      @abstractmethod 
+                      def printX(self):
+                          pass 
+
+                    class B(A): 
+
+                          def printX(self):
+                              print(self.x)
+
+                    b1 = B()
+                    b1.printX()
+
+
+            </code>
+        </pre>
+    </body>
+</html>
