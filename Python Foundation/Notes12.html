@@ -190,6 +190,34 @@
                       ramu 
                       babu 
 
+            ==> Delete a File : 
+                ---------------- 
+
+                To delete a file, you must import the OS module, and run its os.remove() function: 
+
+                import os 
+                os.remove('filepath')
+
+                check if file was exist or not before deleting the file for to avoid getting an error 
+
+                import os 
+
+                if os.path.exists('filename'):
+                    os.remove('filename')
+                else:
+                    print('file doesnot exist')
+
+                Delete the folder :
+                ------------------- 
+
+                import os 
+                os.rmdir('foldername')
+
+                Note : You can only remove empty folders.
+
+                
+
+
 
 
             </code>

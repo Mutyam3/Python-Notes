@@ -1,0 +1,332 @@
+<html>
+    <head>
+        <title>
+            Mutyam ==> Notes13
+        </title>
+    </head>
+    <body>
+        <pre>
+            <code>
+
+                15. Object Oriented Principles
+             
+                => 1.Class definition
+                => 2.Class objects
+                => 3.Class variables or attributes
+                => 4.Attribute references
+                => 5.Modifying class attributes
+                => 6.Class instantiation
+                => 7.Creating objects using class instantiation
+                => 8.Initial state of class objects
+                => 9.The __init__() method
+                => 10.Initializing object state using the __init__() method
+                => 11.Creating instance objects with unique initial states
+                => 12.Methods in class objects
+                => 13.Class and instance variables
+                => 14.Object Oriented Programming in Python
+                => 15.Polymorphism in Python
+                => 16.Encapsulation in Python
+                => 17.Inheritance in Python
+                => 18.Data Abstraction in Python 
+
+            1. Class Definition :
+               ----------------- 
+
+                 lets say I have ... 
+
+                 person1 = {
+                    'firstname' : 'Bhargav',
+                    'lastname' : 'Mutyam',
+                    'age' : 50
+                 }
+
+                 person2 = {
+                    'firstname' : 'Raju',
+                    'lastname' : 'Babu',
+                    'age' : 40
+                 }
+
+                 person3 = {
+                    'firstname' : 'Mahesh',
+                    'lastname' : 'Babu',
+                    'age' : 25
+                 }
+
+                 This way if I have a lot of people, I have to create dictionaries so many times 
+                 and in this repetation we are writing only bhargav mutyam 50 is different i.e values are different 
+                 keys are same so instead of repeating the code we can use classes 
+                 
+                 class is something looks like a function but it is not doing functional 
+                 it creating objects - behave like a dictionary 
+
+                 class Person():
+                    firstname = "Bhargav"
+                    lastname = 'Mutyam'
+                    age = 50 
+
+                   in the above code, we have three attributes those are class attributes:
+                    
+            ==> 2. Class objects :
+                   --------------
+
+                   person1 = Person()
+
+                   person1 is the class object  
+
+
+            ==> 3.Class variables or attributes : 
+                  --------------------------------
+                  class Person():
+                     firstname = "Bhargav"
+                     lastname = 'Mutyam'
+                     age = 50 
+
+                 in the above code, we have three attributes those are class attributes:
+
+            ==> 4.Attribute references : 
+                  ---------------------- 
+
+                  class Person():
+                      firstname = 'Bhargav'
+                      age = 25 
+
+                   Person.firstname = 'Mutyam' // here Person is class not object  Person.firstname is an atrribute reference 
+                   person1 = Person()          // here person1 is object as we create an instance of a class 
+
+                   print(Person.firstname) // Mutyam 
+                   print(person1.firstname) // Mutyam 
+
+             ==> 5.Modifying class attributes : 
+                   ----------------------------- 
+
+                   Person.firstname = 'Mutyam' 
+                   person1 = Person()           
+
+                   print(Person.firstname) // Mutyam 
+                   print(person1.firstname) // Mutyam 
+
+                  It is not recommended to change the value of an attribute in the class 
+
+                  the best way to change the value is in the object 
+
+            
+                   person1.firstname = 'Mutyam'
+
+                   print(Person.firstname) // 'Bhargav'
+                   print(Person1.firstname) // 'Mutyam'
+
+             ==> 6. Class instantiation : 
+                    -------------------- 
+
+                person1 = Person() // creating an object like this by calling the class and assigning to a variable known as instantiation
+                                      whenever we create an instance of a class it creates an object that object is stored in the person1 (variable).
+                                      
+                print(person1.firstname)// Bhargav 
+                print(person1.lastname) // Mutyam 
+                print(person1.age) // 50
+
+            ==> 7. Creating objects using class instantiation :
+                   ------------------------------------------- 
+            
+                We can create lot of instances
+                
+                person2 = Person()
+                person3 = Person()
+
+                person2.firstname = 'Mahesh'
+                person2.age = 40 
+
+                person3. firstname = 'Rahul'
+                person3.age = 50 
+
+                print(person1.firstname) // Mutyam 
+                print(person2.firstname) // Mahesh
+                print(person3.firstname) // Rahul
+
+                Here, we are again repeating like person1.firstname= '' person2.firstname 
+
+            ==> 8.Initial state of class objects : 
+                  -------------------------------- 
+
+                  class Person():
+                      firstname = 'Bhargav' // initial state of class
+
+                 
+                  Person.firstname = 'Mutyam'
+                  print(Person.firstname) // Bhargav get replced with Mutyam
+
+
+            ==> 9.The __init__() method : 
+                  ---------------------- 
+
+                class Person():     
+
+                   def __int__(self, a, b):  // first value is fixed u need to write that it's ur choice u can write anything 
+                             self.firstname = a   
+                             self.age = b 
+
+            ==> 10.Initializing object state using the __init__() method :
+                   ---------------------------------------------------------
+            ==> 11.Creating instance objects with unique initial states :
+                   -------------------------------------------------------- 
+
+
+                person1 = Person('Mutyam', 50)
+                person2 = Person('Mahesh', 40)
+                person3 = Person('Ram', 25)
+
+                print(person1.firstname) // Mutyam 
+                print(person2.firstname) // Mahesh
+                print(person3.firstname) // Ram 
+
+                Note :  without the function in the class, our class will always have same values but when we have init function 
+                        it helping us to assign different values to the class.
+                        In this init function the value is fixed everyone is using self as a first
+                        after first value only u can give parameters 
+
+            
+            ==> 12. Class and instance variables : 
+                    ------------------------------ 
+
+                    class Person():
+                        country = 'India' // class Variable /class attribute which is common for all 
+
+                        def __int__(self, a,b,c):
+                             self.firstname = a   // here firstname, age and city are the instance variables as when we create instances and gives the values then only it gets filled
+                             self.age = b 
+                             self.city = c
+
+                    person1 = Person("Mutyam", 50, 'hyd')  #class instantiation
+                    person2 = Person('Bhargav', 25, 'Vizag')
+                    person3 = Person('Balu', 42, 'Chennai')
+
+                    Class variables serve as shared attributes across all instances of a class, 
+                    providing a centralized means for managing data common to the entire class.
+
+
+                    On the other hand, instance variables encapsulate unique characteristics for each object,
+                    maintaining individuality.
+
+
+                 class Dog():
+                     type = 'animal'
+
+                    def __init__(self, breed, color):
+                             self.breed =  breed 
+                             self.color = color 
+
+                dog1 = Dog('Labrador', 'Black')
+                dog2 = Dog('Golden retriever', 'Brown')
+
+                print(dog1.type) // animal
+                print(dog1.breed) // Labrador
+                print(dog1.color) // Black
+
+                print(dog2.type) // animal
+                print(dog2.breed) // Golden Retriever
+                print(dog2.color) // Brown 
+
+
+                unique characteristics write under init function which are instance variables. 
+                common things write under class which are class variables. 
+
+
+                init is the function name 
+
+
+            ==> 13. Methods in class objects :
+                    ------------------------
+
+                    whatever  the functions we write under the class are called methods 
+
+                    init is the method in the class object 
+
+                    class Dog():
+                       type = 'animal'
+                       def __init__(self, breed, color):
+                             self.breed = breed 
+                             self.color = color 
+
+                        def bark(self,x):
+                             print(x)
+
+                    dog1 = Dog('Labrador', 'Black')
+                    dog2 = Dog('Golden Retriever', 'Brown')
+
+                    dog1.bark('Hello')
+
+                    output : Hello 
+
+
+
+                    Example 2 : 
+
+                    class AirConditioner():
+                        type = 'electronic appliance'
+                        temp = 25 // it is fixed
+
+                        def __init__(self, brand)
+                             self.brand = brand 
+
+                        def turnOn(self):
+                             print('AC is turned On')
+
+                        def turnOff(self):
+                            print('AC is turned Off')
+
+                        def incTemp(self):
+                            self.temp += 1
+                            print(self.temp)
+
+                        def decTemp(self):
+                            self.temp += 1
+                            print(self.temp)
+
+                    ac1 = AirConditioner('LG')
+                    print(ac1.type) //electronic appliance
+                    print(ac1.temp) // 25
+                    print(ac1.brand) // LG
+
+                    ac.turnOn() // AC is turned On
+                    ac.turnOff() // AC is turned Off
+                    ac.incTemp() 26
+                    ac.decTemp() 24 
+
+                    if we give together incTemp and incTemp, it won't dec to 25 after 26 it gets 24 
+                    self.temp += 1
+                    print(self.temp) now we can do this 
+
+
+
+
+
+
+
+
+                        
+              
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                
+
+
+
+
+
+            </code>
+        </pre>
+    </body>
+</html>
