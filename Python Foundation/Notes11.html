@@ -614,7 +614,23 @@
 
                       squares = map(lambda num:num**2,nums) // here after , we need to put the list name 
                       print(squares) // [1, 4, 9]
-                      
+
+
+                      nums = [1,2,3,4,5,6]
+                      nums1 = map(lambda p : p*2 , nums)
+
+                      print(nums1) // object it gets printed
+
+                      print(list(nums1)) // [1,4,6,8,10,12]
+                      print(list(nums1)) // []
+
+                      Note :  why I am getting [] empty list second time when used that nums1 because this iterators [the map returns the iterator which is stored in the variable int his case nums1]
+                              any iterator having special behavior that when we once access it after it we cannot access second time it's exhausted or completed 
+                              same behavior seen in filter as well. 
+
+                              Iterator cannt be used more than one time they can be accessed or consumed only one time after that it won't give us any value. 
+
+
               8. max() 
 
                      x  = max(5,7)
