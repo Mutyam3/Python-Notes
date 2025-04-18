@@ -8,8 +8,188 @@
         <pre>
             <code>
                 *** Tkinter *** 
+                --------------------
 
-                
+                The tkinter module 
+
+                Tkinter is the standard Python interface to the Tk GUI toolkit that comes bundled with Python. 
+                It allows you to create graphical user interfaces(GUIs) for your Python applications. 
+
+                Key Concepts : 
+                --------------- 
+
+                       1. Widgets :   The building blocks of your interface (buttons, labels, textboxes. etc)
+                          ---------
+
+                       2. Geometry Management:   How to arrange widgets in your windows (pack, grid, place) 
+                          --------------------
+
+                       3. Event Handling:   Responding to user actions (button clicks, keyboard input)
+                          ---------------
+
+                Widgets : 
+                ---------
+
+                In Tkinter, widgets are the basic building blocks of your graphical user interface (GUI).
+                They represent visual elements that users can interact with, such as buttons, labels, text boxes, and more.
+                Tkinter provides a wide range of widgets for different purposes. 
+
+                Basic widgets :
+                --------------- 
+                Button : A clickable button that triggers an action 
+                Label : Displays text or images. 
+                Entry : A single-line text input field 
+                Text : A multi-line text input and display area. (like textarea)
+                Frame : A container for organizing other widgets. 
+
+                Commonly used Widget Options :
+                ------------------------------- 
+
+                   ==> text : The text displayed on the widget (eg: button label, label text). 
+                   ==> Command : The function to be called when the widget is activated (eg: button click)
+                   ==> bg : The background color of the widget 
+                   ==> fg : The foreground color of the widget(text color)
+                   ==> font : The font used for the widget's text 
+                   ==> width, height : The dimensions of the widget. 
+
+
+            Example : 
+
+                  import tkinter as tk 
+
+                  window = tk.Tk() // creating an window using Tk() 
+
+                  label = tk.label(window, text = 'Welcome to Tkinter', fg='blue') // create a label in window so writing window in label function as first for to place the label inside a window  
+                  label.pack() // placing an item inside a window
+
+                  button = tk.button(window, text = 'Click Me', command = lambda: print('Button Clicked!'))
+                  button.pack()
+
+                  window.mainloop() // it keeps on running until and unless we forcefully to stop it. 
+
+            
+
+            # DRAWING SHAPES USING TKINTER IN PYTHON :
+              ---------------------------------------- 
+
+         ==>  Square Shape :
+              --------------- 
+
+
+              import tkinter as tk 
+
+              window = tk.Tk() 
+              window.title('square') // using title method giving title to that window 
+
+              canvas = tk.Canvas(window, width=600, heigt =600) // load the canvas into window 
+              canvas.pack()
+
+              side_length = 200
+
+              #coordinates 
+              x1 = 100 
+              y1 = 100
+
+              x2 = 300 or x2 = x1 + side_length (if you know side length of the square u can use it this way)
+              y2 = 300 or y2 = y1 + side_length
+
+              canvas.create_rectangle(x1, y1, x2, y2, fill = 'red' , outline = 'black')
+
+
+              window.mainloop() // if u not run this the output won't come makes the application to run 
+
+
+        ==>   Rectangle Shape :
+              ----------------- 
+
+              import tkinter as tk 
+
+              window =  tk.Tk()
+              window.title('rectangle')
+
+              canvas = tk.Canvas(window, width = 600 height = 600)
+              canvas.pack()
+
+              length = 400
+              breadth = 200
+
+              x1 = 100 
+              y1 = 100 
+
+              // know corners   // knows length and breadth
+              x2 = 500  or  x2 = x1 + length 
+              y2 = 300  or  y2 = y1 + breadth
+
+              canvas.create_rectangle(x1, y1, x2, y2, fill = 'red' , outline = 'black')
+
+              window.mainloop()
+
+
+        ==> Circle Shape :
+            -------------- 
+
+            import tkinter as tk 
+
+            window = tk.Tk()
+            window.title('circle')
+
+            canvas = tk.Canvas(window, width= 600 height=600)
+            canvas.pack()
+
+            // knows corners 
+
+            x1 = 100
+            y1 = 100
+
+            x2 = 400
+            y2 = 400 
+
+            canvas.create_oval(x1, y1, x2, y2, fill='blue', outline = 'black')
+            canvas.pack()
+
+            window.mainloop()
+
+            if u want oval shape use the rectangle shape coordinates and use method create_oval 
+
+            second scenario : known the length of the radius and coordinates of the center by using these two 
+                              units we can need to find the left lower corner and right top corner 
+
+
+
+            radius = 150
+            center_x = 250
+            center_y = 250 
+
+            x1 = center_x - radius 
+            y1 = center_y - radius 
+
+            x2 = center_x + radius
+            y2 = center_y + radius 
+
+            canvas.create_oval(x1, y1, x2, y2, fill='red', outline = 'black')
+
+            window.mainloop()
+
+        ==> Triangle Shape :
+            ---------------- 
+
+            we should know the three coordinates 
+
+            import tkinter as tk 
+
+            window = tk.Tk()
+            window.title('Triangle')
+
+            canvas = tk.Canvas(window, width = 600 height = 600)
+            canvas.pack()
+
+            points = [300,100,100,300,500,300]  // we need all three coordinates of all corners in a list 
+            // tkinter will considered if we put 8 values as a quadrilateral triangle if we put 12 values considered as hexagonal 
+
+            canvas.create_polygon(points, fill='yellow', outline='black')
+
+            window.mainloop()
+
 
 
             </code>

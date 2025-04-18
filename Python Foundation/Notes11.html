@@ -434,6 +434,12 @@
        ==> 19. Lambda Function Expressions :
                ----------------------------- 
 
+               Lambda functions are samll, unamed functions.
+               They are defined using the lambda keyword instead of the usal def.
+               Lambda functions are limited to a single expression.
+               This expression is evaluable and returned when function is called. 
+               They are designed for tasks where you need a function briefly, without the overhead of formally defining it. 
+
                     def add(x,y):
                         return x + y 
 
@@ -591,6 +597,9 @@
 
               6. filter() 
 
+                    Keeps items from the iterable for which the function returns True
+                    Returns an iterator that yields the results. 
+
                      nums = [12,34,33,5,76,99]
 
                      // Type 1 : list comprehension
@@ -603,6 +612,9 @@
                      print(evennums) // [12,34,76] 
 
               7. map()
+                   
+                     Applies the given function to each item in the iterable 
+                     Returns an iterator that yields the results. 
 
                       nums = [1,2,3]
 
@@ -689,6 +701,25 @@
               len()
               print()
              
+
+              Iterators 
+              ---------- 
+
+              Iterators are objects that produce values one at a time, on demand. 
+              Once you'have iterated through an iterator (using a for loop, sum,etc).
+              you can't use it. 
+              you need to create a new iterator from the original source. 
+
+              abc = [1,2,3,4]
+
+              a = filter(lambda p : p %2==0, abc)
+
+              print(list(a)) //[2,4]
+
+              print(list(a)) // []
+
+              The second time you call print(list(a)), the iterator a has already been exhausted. Since it's an iterator, it can only be consumed once. 
+              There are no more elements to yield, so converting it to a list results in an empty list [] 
 
 
 
