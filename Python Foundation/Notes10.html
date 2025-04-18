@@ -236,9 +236,44 @@
               ==> 11. Variable scope : 
                       ---------------- 
 
-              ==> 12. Global scope and local scope : 
-                     ------------------------------ 
+                      In Python, a scope defined the region of a program where a particular variable lives and can be accessed
+                      Think of scopes as containers that hold variables. 
+                      There are two primary types of scope : 
 
+                            ==> Local Scope  
+                            ==> Global Scope
+                            
+                    Local Scope : 
+                        A local scope is created whenever a function is called. 
+                        It exists only within that specific function's body. 
+                        Variables declared inside a function are local variables 
+                        They are born when the function starts and vanish when the function ends. 
+                        You can only access a local variable from within the function where it's defined. 
+                        Trying to use it outside the function results in a Name Error. 
+
+                        ex : 
+
+                        def abc(): 
+                            z = 50 
+
+                        print(z) // z is not defined u can't access the local variable z from outside that function 
+
+                        x = 10 
+                        y = 20 
+
+                        def abc():
+                            print(x)
+                            print(y)
+                            z = 10 
+
+                         abc() // 10
+                                  20 
+      
+
+              ==> 12. Global scope and local scope : 
+                     ------------------------------
+                     
+                     
                       x = 10 
 
                       def abc():
