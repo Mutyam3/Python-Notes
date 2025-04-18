@@ -8,7 +8,7 @@
         <pre>
             <code>
                 *** 
-                1.Modules
+                1. Modules
                 2. Math 
                 3. Date and Time 
                 4. OS 
@@ -17,8 +17,233 @@
 
             ==> 1. Modules :
                    ---------
-                   
+
+                   Any single file which contains python code called module 
+
+
+            ----------------------
+            |                    |                 
+            |  def abc():        | 
+            |      print('hi')   |
+            |                    |
+            |  x = 10            |
+            |  print(x+1)        |
+            |                    |
+            |                    |
+            |____________________|
+
+            collection of modules is known as package 
+
+            collection of packages is known as Library 
+
+
+             
+
+        ==>   2. Math :
+                 ------- 
+
+                 Math Module : 
+
+                 #import math module 
+
+                 import math 
+
+                 print(math) // < module 'math' (built-in) > 
+
+                 math.ceil() :
+                 --------------- 
+
+                   math.ceil(4.2) // number comming in between 4 and 5 here 4 is floor 5 is ceiling 
+
+                  print(math.ceil(2.56))  // 3 
+
+                  print(math.ceil(7.99))  // 8 
+
+                 math.prod():
+                 ------------ 
+
+                 product - multiply
+
+                    print(math.prod([1,2,3]))  // 6 
+
+                    sum() is builtin function not part of math module
+                    
+                math.pow() :
+                ------------- 
+                  always return floating point
+                
+                  print(math.pow(2,3)) // 8.0 
+
+                  print(math.pow(2.5,3)) // 15.625 
+
+                math.sqrt() : 
+                -------------- 
+
+                   result in floating point
+
+                    print(math.sqrt(4)) // 2.0
+                    print(math.sqrt(16)) // 4.0 
+
+                math.cbrt() :
+                ------------ 
+
+                     result in floating point 
+
+                     print(math.cbrt(8)) // 2.0 
+
+                math.factorial():
+                ----------------- 
+
+                   print(math.factorial(3)) //4 
+
+                   print(math.factorial(4)) // 24 
+
+                math.isqrt():
+                -------------
+                   i means integer part only 
+
+                   print(math.sqrt(5)) //2.23 
+
+                   print(math.sqrt(6)) // 2.449
+
+                   print(math.sqrt(9)) // 3.0 
+
+                   print(math.isqrt(9)) //3 
+
+                   print(math.isqrt(6)) // 2
+
+
+                math.perm():
+                ------------ 
+
+                    permutation value 
+
+                    print(math.perm(5,2)) // 20 
+
+                math.comb():
+                ----------- 
+
+                     combination value 
+
+                     print(math.comb(5,2)) // 10
+
+                math.lcm():
+                ----------- 
+
+                    print(math.lcm(3,6)) // 6 
+                    print(math.lcm(3,6)) // 6 
+                    print(math.lcm(3,4)) // 12 
+
+                math.gcd() : hcf 
+                ----------- 
+
+                     print(math.gcd(12,24)) // 12 
+
+
+               finite and infinite : 
+               -------------------- 
+
+               x = float('inf') or math.inf both are same 
+
+               print(math.isinf(x)) // True
+
+               print(math.isfinite(x)) // False 
+
+               x = 45 
+               print(math.isfinite(x)) // True 
+
+               print(math.isinf(x)) // False 
+
+
+               math.pi():
+               ---------- 
+
+               print(math.pi()) // 3.141 
+
+               math.e():
+               ---------- 
+
+               print(math.e()) // 2.718 
+
+               math.nan():
+               ------------ 
+
+               print(math.nan) // nan invalid number 
+
+
+               math.remainder():
+               ----------------- 
+
+               % operator 
+
+               print(math.remainder(10,3)) // 1.0   
+
+       ==>  3. Date and Time  :
+               ----------------- 
+
+               import datetime 
+
+               print(datetime.time()) // 00:00:00 12 oh clock as I am not passing anything so getting 0 
+
+               print(datetime.time(7,36,56)) // 07:36:56 hr : min : sec 
+
+               print(datetime.time(7)) // 07:00:00 
+
+               print(datetime.time(minute=36,second=56, hour = 7)) // 07:36:56 using keyword argument 
+
+               print(datetime.date()) // if am not passing anything it gives an error 
+
+               print(datetime.date(2025,7,12)) // 2024-07-12  // year-month-date 
+
+               print(datetime.date(2025,7,36)) // throws an error day is out of range of month 
+
+               print(datetime.date.today()) //  current date 
+
+               print(datetime.date.today().weekday()) // if it monday gives 0 tuesday = 1 ... 
+
+               print(datetime.date.today().isoweekday()) // monday = 1 , tuesday = 2, wednesday = 3 
+
+               print(datetime.datetime(2001,1,25, 12,5,3)) // 2001-01-25 12:05:03 
+
+               x  = datetime.datetime(2001,1,25, 12,5,3)
+               y = x.replace(year = 2002 minute = 7) 
+               print(y)  // 2002-01-25 12:07:03 
+
+
+        ==> 4. OS :
+               ----
                
+               import os 
+
+               print(os.getcwd()) // current working directory 
+
+               os.chdir('../loops') // change current directory 
+
+               print(os.getcwd) // current working directory with ../loops 
+
+               os.chdir('..')
+
+               print(os.listdir()) // shows the list of directories in list 
+
+               print(list(os.scandir())[0]) // get one element in the list of directory 
+
+               print(list(os.scandir())[0].name) // gives the name of that file 
+
+               print(list(os.scandir())[0].path) // gives the path of that file 
+
+               print(list(os.scandir())[0].is_file()) // True 
+
+               os.mkdir('statements') // statements folder gets created  (mkdir makes only one folder)
+
+               inside statements another folder i want then 
+
+               os.makedirs('statements/loops/operator') // we can make multiple folders 
+
+               os.rename('statements', 'functions') // statement name changes to functions 
+
+               os.remove('functions/loops/operators/users.txt') // removes the file  
+
+               os.rmdir('functions/loops/operators') // removes the folder if it is empty only              
 
 
             </code>
