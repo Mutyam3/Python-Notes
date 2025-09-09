@@ -1,4 +1,73 @@
 
+# Dictionaries : 
+
+   # unordered
+   # changeable 
+   # indexed
+
+dic = {}
+
+print(type(dic)) #dict 
+
+dic = {1,2,3,4,5}
+
+print(type(dic)) # Set  => only have values
+
+# create a dictionary  => have both key and value pairs
+
+my_dict = {'car1' : "Audi", "car2" : "BMW", "car3" :"Mercidies Benz" }
+
+print(type(my_dict)) # dict
+
+# indexing : won't be there but we can access values based on keys 
+# Access the item values based on keys 
+
+print(my_dict['car1']) # 'Audi'
+
+# We can even loop through the dictionaries keys 
+
+for x in my_dict:
+     print(x) 
+# car1 
+# car2 
+# car3
+
+# we can even loop through the dictionaries values 
+
+for x in my_dict.values():
+     print(x) 
+
+# Audi 
+# BMW 
+# Mercidies Benz 
+
+# we can also check both keys and values 
+
+for x in my_dict.items():
+     print(x)
+
+# ('car1', 'Audi')
+# ('car2', 'BMW')
+# ('car3', 'Mercidies Benz')
+
+# Adding items in Dictionaries 
+
+my_dict['car4'] = 'Audi 2.0'
+
+print(my_dict) # {'car1' : "Audi", "car2" : "BMW", "car3" :"Mercidies Benz", "car4" : "Audi 2.0" }
+
+
+my_dict['car1'] = 'Maruti'
+print(my_dict) # {'car1' : "Maruti", "car2" : "BMW", "car3" :"Mercidies Benz", "car4" : "Audi 2.0" } # overwritten the value  
+
+## **** Nested Dictionary *** 
+
+car1_model = {}
+
+
+
+
+
 # Problems on Dictionaries : 
 #---------------------------
 
