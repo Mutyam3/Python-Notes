@@ -62,9 +62,22 @@ print(my_dict) # {'car1' : "Maruti", "car2" : "BMW", "car3" :"Mercidies Benz", "
 
 ## **** Nested Dictionary *** 
 
-car1_model = {}
+car1_model = {'Mercedes': 1980}
+car2_model = {'Audi': 1970}
+car3_model = {'Ambassador': 1980}
 
+car_type = {'car1' : car1_model, 'car2' : car2_model , 'car3' : car3_model}
 
+print(car_type) 
+## {'car1' : {'Mercedes' : 1960}, 'car2' : {'Audi' : 1970}, 'car3' : {'Ambassador' : 1980}}
+
+## Accessing the items in the dictionary
+
+print(car_type['car1'])
+## {Mercedes : 1960}
+
+print(car_type['car1']['Mercedes'])
+# 1960 
 
 
 
